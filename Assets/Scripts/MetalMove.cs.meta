@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 1ad219b5434124c05816f6f55de6f96b
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - red: {fileID: 2100000, guid: 1a25ebb1050c74bd1ba11fefcdd0c7de, type: 2}
+  - black: {fileID: 2100000, guid: 182044d3c87e94f46bdee963a833c6f2, type: 2}
+  - gray: {fileID: 2100000, guid: 658e6eb0681084963a89228df317d8e5, type: 2}
+  - white: {fileID: 2100000, guid: 223f5a54c8154411dbd0bceecc454581, type: 2}
+  - playerTransform: {instanceID: 0}
+  - alertParticles: {instanceID: 0}
+  - myRenderer: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -6,14 +6,18 @@ TagManager:
   tags:
   - Ground
   - Metal
+  - Poison
+  - Goal
+  - MovingLight
+  - Core
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Key
   - Water
   - UI
-  - 
+  - Light
   - 
   - 
   - 

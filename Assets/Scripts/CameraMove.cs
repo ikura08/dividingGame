@@ -22,6 +22,7 @@ public class CameraMove : MonoBehaviour
         //     sizeSlider.onValueChanged.AddListener(UpdateCameraSize);
         //     UpdateCameraSize(sizeSlider.value); // 初期反映
         // }
+        Debug.Log("CameraMove Start");
     }
 
     void Update()

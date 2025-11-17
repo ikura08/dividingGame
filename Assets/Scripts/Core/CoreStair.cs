@@ -14,7 +14,6 @@ public class CoreStair : MonoBehaviour, ITrigger, ICollection
     Vector3 originalScale;
     public int thisCoreNumber;
     public bool isCreating = false;
-    public float destroyTime = 3.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -57,9 +56,10 @@ public class CoreStair : MonoBehaviour, ITrigger, ICollection
         yield return new WaitForSeconds(0.2f);
 
         StartCoroutine(provider.ProvidingX(originalScale, thisCoreNumber));
-        yield return new WaitForSeconds(destroyTime);
+        yield return new WaitForSeconds(2.0f);
 
-        provider.DestroyAllCores(thisCoreNumber);
+        // provider.DestroyAllCores(thisCoreNumber);
+        StartCoroutine(provider.Blinking(thisCoreNumber));
         isCreating = false;
     }
 

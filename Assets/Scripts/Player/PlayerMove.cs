@@ -39,6 +39,11 @@ public class PlayerMove : MonoBehaviour, IJumpable  //ここでふたつのinter
     public AbilityManager abilityManagerScr;
     public PlayerAnimation playerAnimationScr;
 
+    // バッテリー消費用
+    public float batteryConsumeInterval = 0.1f; // 0.1秒ごとにバッテリー消費
+    float batteryTimer = 0f;
+    public int moveBatteryCost = 1;
+
     void Start()
     {
         Prb = this.GetComponent<Rigidbody2D>();
@@ -130,6 +135,22 @@ public class PlayerMove : MonoBehaviour, IJumpable  //ここでふたつのinter
 
         // 移動
         transform.position += (Vector3)(currentDirection * moveSpeed * Time.deltaTime);
+        
+        if (currentDirection != Vector2.zero) // 動いているなら
+        {
+            batteryTimer += Time.fixedDeltaTime;
+
+            if (batteryTimer >= batteryConsumeInterval)
+            {
+                batteryTimer = 0f;
+                BatteryController.Instance.UseBattery(moveBatteryCost);
+            }
+        }
+        else
+        {
+            // 止まったらタイマーリセット
+            batteryTimer = 0f;
+        }
     }
 
 

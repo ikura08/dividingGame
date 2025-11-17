@@ -91,7 +91,7 @@ public class SceneManagerScr : MonoBehaviour
             yield return null;
         }
 
-        panel.gameObject.SetActive(false);
+        // panel.gameObject.SetActive(false);
     }
 
     private IEnumerator FadeIn()

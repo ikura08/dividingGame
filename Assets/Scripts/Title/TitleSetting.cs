@@ -20,7 +20,7 @@ public class TitleSetting : MonoBehaviour
         trigger = jumpCore.GetComponent<ITrigger>();
         coreStairScr = stairCore.GetComponent<CoreStair>();
 
-        coreStairScr.destroyTime = 1.0f;
+        // coreStairScr.destroyTime = 1.0f;
 
         // jumpCore.SetActive(false);
         // warpCore1.SetActive(false);
@@ -34,8 +34,8 @@ public class TitleSetting : MonoBehaviour
     {
         if (isAppearance == false)
         {
-            int number = Random.Range(0, 3);
-            if (number == lastnumber) number = (number + 1) % 3;
+            int number = Random.Range(0, 2);
+            if (number == lastnumber) number = (number + 1) % 2;
 
             switch (number)
             {
@@ -43,11 +43,11 @@ public class TitleSetting : MonoBehaviour
                     StartCoroutine(JumpCoreAppearance());
                     break;
                 case 1:
-                    StartCoroutine(WarpCoreAppearance());
-                    break;
-                case 2:
                     StartCoroutine(ProvideCoreAppearance());
                     break;
+                // case 2:
+                //     StartCoroutine(WarpCoreAppearance());
+                //     break;
             }
 
             lastnumber = number;

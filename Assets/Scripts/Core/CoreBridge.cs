@@ -46,9 +46,10 @@ public class CoreBridge : MonoBehaviour, ITrigger, ICollection
             yield return new WaitForSeconds(0.2f);
             StartCoroutine(provider.ProvidingX(originalScale, thisCoreNumber));
         }
-        
-        yield return new WaitForSeconds(3.0f);
-        provider.DestroyAllCores(thisCoreNumber);
+
+        yield return new WaitForSeconds(2.0f);
+        // provider.DestroyAllCores(thisCoreNumber);
+        StartCoroutine(provider.Blinking(thisCoreNumber));
 
         isCreating = false;
     }

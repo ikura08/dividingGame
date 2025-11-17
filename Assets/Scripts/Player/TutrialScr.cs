@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using TMPro;
 
 public class TutrialScr : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class TutrialScr : MonoBehaviour
     [SerializeField]
     private GameObject thirdCore;
     [SerializeField]
-    private Text spaceText;
+    private TMP_Text spaceText;
 
     private Color spaceColor;
     public int spaceChecker = 0; 
@@ -48,7 +49,10 @@ public class TutrialScr : MonoBehaviour
         if (fadeCoroutine != null)
             StopCoroutine(fadeCoroutine);
 
-        fadeCoroutine = StartCoroutine(FadeRoutine(targetAlpha, duration));
+        if (this != null)
+        {
+            fadeCoroutine = StartCoroutine(FadeRoutine(targetAlpha, duration));
+        }
     }
 
     private IEnumerator FadeRoutine(float targetAlpha, float duration)

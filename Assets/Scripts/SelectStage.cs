@@ -10,7 +10,7 @@ public class SelectStage : MonoBehaviour
     public GameObject[] clearStageBack;
     public GameObject[] movingLight;
     public Button[] buttons;
-    public static int nextStage =3;
+    public static int nextStage =0;
     public static int clearCount = nextStage -1;
     // Start is called before the first frame update
     void Start()
@@ -54,6 +54,7 @@ public class SelectStage : MonoBehaviour
     void LoadStage(int stageNumber)
     {
         string sceneName = "Stage" + stageNumber;
-        SceneManager.LoadScene(sceneName);
+        // SceneManager.LoadScene(sceneName);
+        SceneManagerScr.Instance.FadeAndLoad(sceneName);
     }
 }

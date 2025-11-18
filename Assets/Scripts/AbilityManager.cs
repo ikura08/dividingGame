@@ -28,6 +28,8 @@ public class AbilityManager : MonoBehaviour
     private GameObject WholeLight;
     float holdTime = 0f;   // 長押ししている時間
     GameObject target;     // 長押し中のオブジェクト
+    private float spaceDuration = 0f;
+    private int coreBatteryCost = 10;
 
     // Start is called before the first frame update
     void Start()
@@ -47,12 +49,23 @@ public class AbilityManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        //以下、ボタンごとの動作内容
         if (Input.GetKeyDown(KeyCode.Space))
+            spaceDuration = 0;
+
+        if (Input.GetKey(KeyCode.Space))
+            spaceDuration += Time.deltaTime;
+
+        if (Input.GetKeyUp(KeyCode.Space))
+            spaceDuration = 0;
+
+        if (spaceDuration >= 0.5f)
         {
             if (trigger != null)
+            {
                 trigger.CoreTrigger();
+                BatteryController.Instance.UseBattery(coreBatteryCost);
+            }
+            spaceDuration = -1.0f;
         }
 
         if (Input.GetKeyDown(KeyCode.W))

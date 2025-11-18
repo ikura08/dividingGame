@@ -8,60 +8,57 @@ public class BatteryController : MonoBehaviour
     public static BatteryController Instance;
 
     [Header("UI")]
-    public Slider slider1;
-    public Slider slider2;
-    public Slider slider3;
-    public Slider slider4;
+    public Slider[] sliders;   // ← これで全部まとめて扱える
 
     [Header("バッテリー設定")]
-    public int maxBattery = 100;
+    public int maxBattery = 400;
     public int currentBattery;
 
     void Awake()
     {
         Instance = this;
     }
-    
-    // Start is called before the first frame update
+
     void Start()
     {
         currentBattery = maxBattery;
+
+        // 全スライダーをまとめて初期化
+        foreach (Slider s in sliders)
+        {
+            s.maxValue = 100;
+            s.value = 100;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     public void UseBattery(int amount)
     {
-        Debug.Log("バッテリー減少");
-        currentBattery -= amount;
-
-        if (currentBattery < 0)
-            currentBattery = 0;
-
+        currentBattery = Mathf.Max(0, currentBattery - amount);
         UpdateUI();
     }
-    
+
     public void AddBattery(int amount)
     {
-        currentBattery += amount;
-
-        if (currentBattery > maxBattery)
-            currentBattery = maxBattery;
-
+        currentBattery = Mathf.Min(maxBattery, currentBattery + amount);
         UpdateUI();
     }
 
     void UpdateUI()
     {
-        if (slider1 != null)
+        int remaining = currentBattery;
+
+        foreach (Slider s in sliders)
         {
-            slider1.maxValue = maxBattery;
-            slider1.value = currentBattery;
+            if (remaining >= 100)
+            {
+                s.value = 100;
+                remaining -= 100;
+            }
+            else
+            {
+                s.value = remaining;
+                remaining = 0;
+            }
         }
     }
-    
-
 }

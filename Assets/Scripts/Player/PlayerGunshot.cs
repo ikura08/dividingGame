@@ -7,7 +7,7 @@ using UnityEngine;
 public class PlayerGunshot : MonoBehaviour
 {
     public ParticleSystem shotParticle;
-    public GameObject gunBall;
+    public GameObject bullet;
     PlayerMovement movement;
     // Start is called before the first frame update
     void Start()
@@ -27,7 +27,7 @@ public class PlayerGunshot : MonoBehaviour
 
     void Shoot()
     {
-        GameObject b = Instantiate(gunBall, transform.position, Quaternion.identity);
+        GameObject b = Instantiate(bullet, transform.position, Quaternion.identity);
 
         Rigidbody2D rb = b.GetComponent<Rigidbody2D>();
         rb.AddForce(movement.lastDirection * 5f, ForceMode2D.Impulse);

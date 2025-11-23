@@ -18228,6 +18228,7 @@ GameObject:
   - component: {fileID: 398340777}
   - component: {fileID: 398340776}
   - component: {fileID: 398340775}
+  - component: {fileID: 398340782}
   m_Layer: 0
   m_Name: Player (1)
   m_TagString: Player
@@ -18263,7 +18264,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07e0fbb98d99b4895bf46814030dc153, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: 0
 --- !u!61 &398340776
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18365,21 +18365,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17b17a5a663e04e778a95dc7616e4b55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraMove: {fileID: 621130234}
-  firstArea: {fileID: 178795239}
-  firstY: 0
-  secondArea: {fileID: 1048908950}
-  secondY: 0
-  thirdArea: {fileID: 0}
-  thirdY: 0
-  jumpCount: 1
-  isGrounded: 0
-  currentCharacterP: 1
-  blackPanel: {fileID: 400326562}
-  outText: {fileID: 1780416069}
-  abilityManager: {fileID: 940495860}
-  abilityManagerScr: {fileID: 940495861}
-  playerAnimationScr: {fileID: 0}
+  moveSpeed: 4
+  currentDirection: {x: 0, y: 0}
+  lastDirection: {x: 1, y: 0}
 --- !u!95 &398340780
 Animator:
   serializedVersion: 5
@@ -18453,6 +18441,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &398340782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 398340773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d9e4b99d1a2f47719ad4daccce4306d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpForce: 7
+  jumpCount: 1
+  isGrounded: 0
 --- !u!1 &398914819 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6996169661793555202, guid: 5cc744f0a3800441eace4b1604c91ccc, type: 3}

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class CoreMove : MonoBehaviour, IMovable, ITrigger
 {
-    PlayerMove playerMoveScr;
+    PlayerMovement playerMoveScr;
     AbilityManager abilityManagerScr;
     [SerializeField]
     bool tap = false;
@@ -26,7 +26,7 @@ public class CoreMove : MonoBehaviour, IMovable, ITrigger
     void Start()
     {
         Mrb = GetComponent<Rigidbody2D>();
-        playerMoveScr = FindObjectOfType<PlayerMove>();
+        playerMoveScr = FindObjectOfType<PlayerMovement>();
         abilityManagerScr = FindObjectOfType<AbilityManager>();
         // metalRenderer = this.gameObject.GetComponent<Renderer>();
         // metalRenderer.material = black;
@@ -43,9 +43,8 @@ public class CoreMove : MonoBehaviour, IMovable, ITrigger
     public void Tap()
     {
         tap = true;
-        playerMoveScr.currentCharacterP = false;
+        // playerMoveScr.currentDirection = false;
         currentCharacterM = true;
-        Debug.Log("実行された");
     }
 
     void OnCollisionEnter2D(Collision2D collision)

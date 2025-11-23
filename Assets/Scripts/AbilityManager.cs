@@ -21,7 +21,7 @@ public class AbilityManager : MonoBehaviour
     Renderer selectRenderer;
     Rigidbody2D selectRb;
     IconChange iconChangeScr;
-    PlayerMove playerMoveScr;
+    PlayerMovement playerMoveScr;
     IMovable selectMovable;  //タップしたオブジェクトのmovable
     bool coreCollection = false;  //メタルを回収をしたかどうか
     [SerializeField]
@@ -40,7 +40,7 @@ public class AbilityManager : MonoBehaviour
         selectRenderer = selectObject.GetComponent<Renderer>();
         iconChangeScr = FindObjectOfType<IconChange>();
 
-        playerMoveScr = FindObjectOfType<PlayerMove>();
+        playerMoveScr = FindObjectOfType<PlayerMovement>();
         selectMovable = playerObject.GetComponent<IMovable>();
 
         // WholeLight.SetActive(false);
@@ -69,8 +69,10 @@ public class AbilityManager : MonoBehaviour
         }
 
         if (Input.GetKeyDown(KeyCode.W))
-            jumpable.Jump();
-
+        {
+            Debug.Log("ジャンプした");
+            // jumpable.Jump();
+        }
         //コア回収時のマウス長押し
         if (Input.GetMouseButton(0))
         {
@@ -126,10 +128,10 @@ public class AbilityManager : MonoBehaviour
             holdTime = 0f;
         }
 
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            collection.CoreBring();
-        }
+        // if (Input.GetKeyDown(KeyCode.Return))
+        // {
+        //     collection.CoreBring();
+        // }
 
     } //Updateの終わり
 

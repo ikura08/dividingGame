@@ -1,25 +1,33 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerAnimation : MonoBehaviour
 {
     private Animator animator;
-    public int currentState; // 0→静止、1→右移動、-1→左移動
-    // Start is called before the first frame update
+    private PlayerMovement movement; // ← 移動情報を読む
+
+    // Start
     void Start()
     {
         animator = GetComponent<Animator>();
+        movement = GetComponent<PlayerMovement>();
     }
 
-    // Update is called once per frame
+    // Update
     void Update()
     {
-        if (currentState == -1)
-            animator.SetInteger("State", -1);
-        else if (currentState == 0)
-            animator.SetInteger("State", 0);
-        else if (currentState == 1)
-            animator.SetInteger("State", 1);
+        float x = movement.currentDirection.x;
+
+        if (x > 0)
+        {
+            animator.SetInteger("State", 1);   // 右
+        }
+        else if (x < 0)
+        {
+            animator.SetInteger("State", -1);  // 左
+        }
+        else
+        {
+            animator.SetInteger("State", 0);   // 静止
+        }
     }
 }

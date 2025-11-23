@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class CoreJump : MonoBehaviour, ITrigger, ICollection
 {
-    PlayerMove playerMoveScr;
+    PlayerMovement playerMoveScr;
     AbilityManager abilityManagerScr;
     private Transform playerTransform;
     private Rigidbody2D coreRB;
@@ -24,7 +24,7 @@ public class CoreJump : MonoBehaviour, ITrigger, ICollection
     void Start()
     {
         Mrb = GetComponent<Rigidbody2D>();
-        playerMoveScr = FindObjectOfType<PlayerMove>();
+        playerMoveScr = FindObjectOfType<PlayerMovement>();
         abilityManagerScr = FindObjectOfType<AbilityManager>();
 
         scale = transform.localScale;

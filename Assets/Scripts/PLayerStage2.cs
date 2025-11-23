@@ -43,7 +43,7 @@ public class PLayerStage2 : MonoBehaviour, IJumpable  //ここでふたつのint
         pC = Color.white;
         abilityManagerScr = abilityManager.GetComponent<AbilityManager>();
         playerAnimationScr = GetComponent<PlayerAnimation>();
-        playerAnimationScr.currentState = 0;
+        // playerAnimationScr.currentState = 0;
     }
 
     void Update()
@@ -76,12 +76,12 @@ public class PLayerStage2 : MonoBehaviour, IJumpable  //ここでふたつのint
         transform.position += (Vector3)(currentDirection * moveSpeed * Time.deltaTime);
 
         // アニメーション
-        if (currentDirection.x > 0)
-            playerAnimationScr.currentState = 1; //右
-        else if (currentDirection.x < 0)
-            playerAnimationScr.currentState = -1; //左
-        else
-            playerAnimationScr.currentState = 0;
+        // if (currentDirection.x > 0)
+        //     playerAnimationScr.currentState = 1; //右
+        // else if (currentDirection.x < 0)
+        //     playerAnimationScr.currentState = -1; //左
+        // else
+        //     playerAnimationScr.currentState = 0;
 
         if (Input.GetKeyDown(KeyCode.R))
             transform.position = new Vector3(0, 0, 0);

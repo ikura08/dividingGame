@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6124789015492917308}
   m_Layer: 8
   m_Name: Bullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -162,4 +162,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionParticle: {fileID: 4854216961989140813, guid: 3f3d38a603ca848ceb167828a25e1ad8, type: 3}
-  failedExplosionParticle: {fileID: 3958663511975210790, guid: 6251ff0a63eba41a0bca590392ebdc67, type: 3}
+  onWallExplosionParticle: {fileID: 3958663511975210790, guid: 6251ff0a63eba41a0bca590392ebdc67, type: 3}
+  failedExplosionParticle: {fileID: 830244815965932086, guid: 7f291cb46374a45d7a94bb564caef8e2, type: 3}

@@ -3,15 +3,16 @@ using UnityEngine;
 public class BulletController : MonoBehaviour
 {
     public ParticleSystem explosionParticle;
+    public ParticleSystem onWallExplosionParticle;
     public ParticleSystem failedExplosionParticle;
 
-    float lifeTime = 2f;
+    float lifeTime = 0.7f;
     bool isDead = false;
     
     void Start()
     {
         // 2秒後に自動で爆発扱い
-        Invoke(nameof(ExplodeOther), lifeTime);
+        Invoke(nameof(ExplodeTime), lifeTime);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -24,22 +25,36 @@ public class BulletController : MonoBehaviour
         }
         else
         {
-            ExplodeOther();
+            ExplodeWall();
         }
     }
 
     void ExplodeEnemy()
     {
         isDead = true;
-        Instantiate(explosionParticle, transform.position, Quaternion.identity);
+        ParticleSystem p = Instantiate(explosionParticle, transform.position, Quaternion.identity);
+        Destroy(p.gameObject, 2f);
+
         Destroy(gameObject);
     }
 
-    void ExplodeOther()
+    void ExplodeWall()
     {
         if (isDead) return;
         isDead = true;
-        Instantiate(failedExplosionParticle, transform.position, Quaternion.identity);
+        ParticleSystem p = Instantiate(onWallExplosionParticle, transform.position, Quaternion.identity);
+        Destroy(p.gameObject, 2f);
+
+        Destroy(gameObject);
+    }
+    
+    void ExplodeTime()
+    {
+        if (isDead) return;
+        isDead = true;
+        ParticleSystem p = Instantiate(failedExplosionParticle, transform.position, Quaternion.identity);
+        Destroy(p.gameObject, 2f);
+
         Destroy(gameObject);
     }
 }

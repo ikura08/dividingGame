@@ -29,7 +29,7 @@ public class AbilityManager : MonoBehaviour
     float holdTime = 0f;   // 長押ししている時間
     GameObject target;     // 長押し中のオブジェクト
     private float spaceDuration = 0f;
-    private int coreBatteryCost = 10;
+    private int coreBatteryCost = 20;
 
     // Start is called before the first frame update
     void Start()

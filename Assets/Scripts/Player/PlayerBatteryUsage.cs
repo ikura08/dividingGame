@@ -4,7 +4,7 @@ public class PlayerBatteryUsage : MonoBehaviour
 {
     public float batteryConsumeInterval = 0.1f;
     float batteryTimer = 0f;
-    public int moveBatteryCost = 1;
+    public int moveBatteryCost = 2;
 
     PlayerMovement movement;
 
@@ -17,7 +17,6 @@ public class PlayerBatteryUsage : MonoBehaviour
     {
         if (movement.currentDirection != Vector2.zero)
         {
-            Debug.Log("動いた");
             batteryTimer += Time.fixedDeltaTime;
 
             if (batteryTimer >= batteryConsumeInterval)

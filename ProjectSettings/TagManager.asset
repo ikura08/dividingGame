@@ -11,6 +11,7 @@ TagManager:
   - MovingLight
   - Core
   - Enemy
+  - Bullet
   layers:
   - Default
   - TransparentFX

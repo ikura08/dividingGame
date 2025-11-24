@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerCoreInteraction : MonoBehaviour
 {
-    public AbilityManager abilityManagerScr;
+    private AbilityManager abilityManagerScr;
     PlayerJump jump;
 
     void Start()

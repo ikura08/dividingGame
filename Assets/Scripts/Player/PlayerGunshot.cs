@@ -9,6 +9,7 @@ public class PlayerGunshot : MonoBehaviour
     public ParticleSystem shotParticle;
     public GameObject bullet;
     PlayerMovement movement;
+    public BatteryConfig config;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +33,6 @@ public class PlayerGunshot : MonoBehaviour
         Rigidbody2D rb = b.GetComponent<Rigidbody2D>();
         rb.AddForce(movement.lastDirection * 7f, ForceMode2D.Impulse);
 
-        BatteryController.Instance.UseBattery(5);
+        BatteryController.Instance.UseBattery(config.bulletCost);
     }
 }

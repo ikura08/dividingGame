@@ -6,13 +6,12 @@ using UnityEngine;
 public class EnemyDestroy : MonoBehaviour
 {
     public ParticleSystem destroyParticle;
-
-    public int enemyBatteryRecover = 12;
+    public BatteryConfig config;
 
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("始まった");
+        
     }
 
     // Update is called once per frame
@@ -28,7 +27,7 @@ public class EnemyDestroy : MonoBehaviour
             ParticleSystem p = Instantiate(destroyParticle, transform.position, Quaternion.identity);
             Destroy(p, 2f);
 
-            BatteryController.Instance.UseBattery(enemyBatteryRecover);
+            BatteryController.Instance.AddBattery(config.enemybatteryRecover);
 
             Destroy(gameObject);
         }

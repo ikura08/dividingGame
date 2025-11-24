@@ -29,8 +29,7 @@ public class AbilityManager : MonoBehaviour
     float holdTime = 0f;   // 長押ししている時間
     GameObject target;     // 長押し中のオブジェクト
     private float spaceDuration = 0f;
-    private int coreBatteryCost = 20;
-
+    public BatteryConfig config;
     // Start is called before the first frame update
     void Start()
     {
@@ -63,7 +62,7 @@ public class AbilityManager : MonoBehaviour
             if (trigger != null)
             {
                 trigger.CoreTrigger();
-                BatteryController.Instance.UseBattery(coreBatteryCost);
+                BatteryController.Instance.UseBattery(config.coreBatteryCost);
             }
             spaceDuration = -1.0f;
         }

@@ -1,9 +1,13 @@
 fileFormatVersion: 2
-guid: dc9c88984429645a4a0c18b9bfbcd8f2
+guid: 0d15d7d93b7334c86b7acbe3e6f8e2c2
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
+  - playerObject: {instanceID: 0}
+  - selectObject: {instanceID: 0}
+  - coreObject: {instanceID: 0}
+  - WholeLight: {instanceID: 0}
   - config: {fileID: 11400000, guid: e36d9ba9944f64fd688888f5d84d331f, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}

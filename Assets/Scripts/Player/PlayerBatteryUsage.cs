@@ -4,7 +4,7 @@ public class PlayerBatteryUsage : MonoBehaviour
 {
     public float batteryConsumeInterval = 0.1f;
     float batteryTimer = 0f;
-    public int moveBatteryCost = 2;
+    public BatteryConfig config;
 
     PlayerMovement movement;
 
@@ -22,7 +22,7 @@ public class PlayerBatteryUsage : MonoBehaviour
             if (batteryTimer >= batteryConsumeInterval)
             {
                 batteryTimer = 0;
-                BatteryController.Instance.UseBattery(moveBatteryCost);
+                BatteryController.Instance.UseBattery(config.moveBatteryCost);
             }
         }
         else

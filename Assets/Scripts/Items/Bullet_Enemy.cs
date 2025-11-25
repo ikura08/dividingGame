@@ -5,6 +5,7 @@ public class Bullet_Enemy : MonoBehaviour
     public ParticleSystem explosionParticle;
     public ParticleSystem onWallExplosionParticle;
     public ParticleSystem failedExplosionParticle;
+    public BatteryConfig config;
 
     float lifeTime = 0.9f;
     bool isDead = false;
@@ -20,6 +21,7 @@ public class Bullet_Enemy : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player"))
         {
+            BatteryController.Instance.UseBattery(config.enemyBulletDamage);
             ExplodePlayer();
         }
         else

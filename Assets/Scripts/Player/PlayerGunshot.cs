@@ -22,15 +22,7 @@ public class PlayerGunshot : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            Debug.Log("残量は" + bController.currentBattery + "、コストは" + config.bulletCost);
-            if (bController.currentBattery < config.bulletCost)
-            {
-                SceneManagerScr.Instance.GameOver();
-            }
-            else if (bController.currentBattery >= config.bulletCost)
-            {
-                Shoot();
-            }
+            Shoot();
         }
     }
 

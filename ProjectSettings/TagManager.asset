@@ -21,9 +21,9 @@ TagManager:
   - UI
   - Light
   - Player
-  - Bullet
-  - 
-  - 
+  - PBullet
+  - EBullet
+  - Ground
   - 
   - 
   - 

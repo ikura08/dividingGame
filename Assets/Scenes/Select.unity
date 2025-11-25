@@ -426,7 +426,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07e0fbb98d99b4895bf46814030dc153, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: 0
 --- !u!61 &155075645
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -528,21 +527,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17b17a5a663e04e778a95dc7616e4b55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraMove: {fileID: 0}
-  firstArea: {fileID: 0}
-  firstY: 0
-  secondArea: {fileID: 0}
-  secondY: 0
-  thirdArea: {fileID: 0}
-  thirdY: 0
-  jumpCount: 1
-  isGrounded: 0
-  currentCharacterP: 1
-  blackPanel: {fileID: 0}
-  outText: {fileID: 0}
-  abilityManager: {fileID: 0}
-  abilityManagerScr: {fileID: 0}
-  playerAnimationScr: {fileID: 0}
+  moveSpeed: 4
+  currentDirection: {x: 0, y: 0}
+  lastDirection: {x: 1, y: 0}
 --- !u!95 &155075649
 Animator:
   serializedVersion: 5
@@ -1281,7 +1268,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_TargetDisplay: 0
 --- !u!224 &470443286
 RectTransform:
@@ -2027,7 +2014,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &811922986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2123,27 +2110,7 @@ CompositeCollider2D:
   m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths:
-  - m_Collider: {fileID: 1420037283}
-    m_ColliderPaths:
-    - - X: 7500000
-        Y: 7500000
-      - X: -7500000
-        Y: 7500000
-      - X: -7500000
-        Y: -7500000
-      - X: 7500000
-        Y: -7500000
-  - m_Collider: {fileID: 1031664561}
-    m_ColliderPaths:
-    - - X: 7199999
-        Y: 7199999
-      - X: -7199999
-        Y: 7199999
-      - X: -7199999
-        Y: -7199999
-      - X: 7199999
-        Y: -7199999
+  m_ColliderPaths: []
   m_CompositePaths:
     m_Paths:
     - - {x: 0.74997073, y: -0.75}
@@ -216910,7 +216877,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2072128823
 RectTransform:
   m_ObjectHideFlags: 0

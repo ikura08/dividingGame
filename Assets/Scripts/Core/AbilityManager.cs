@@ -62,13 +62,8 @@ public class AbilityManager : MonoBehaviour
         {
             if (trigger != null)
             {
-                if (bController.currentBattery < config.coreBatteryCost)
-                    SceneManagerScr.Instance.GameOver();
-                else
-                {
-                    trigger.CoreTrigger();
-                    BatteryController.Instance.UseBattery(config.coreBatteryCost);
-                }
+                trigger.CoreTrigger();
+                BatteryController.Instance.UseBattery(config.coreBatteryCost);
             }
             spaceDuration = -1.0f;
         }

@@ -42,10 +42,10 @@ public class BatteryController : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("残量は" + currentBattery, gameObject);
         if (currentBattery <= 0)
         {
-            Debug.Log("亡くなった");
+            SceneManagerScr.Instance.GameOver();
+            currentBattery = 1;
         }
     }
 

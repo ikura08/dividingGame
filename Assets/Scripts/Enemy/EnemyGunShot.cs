@@ -19,7 +19,7 @@ public class EnemyGunShot : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (timer >= 0.7f)
+        if (timer >= 0.7f && isGround == true)
         {
             ShootLeft();
             ShootRight();
@@ -31,13 +31,13 @@ public class EnemyGunShot : MonoBehaviour
     {
         GameObject b = Instantiate(bullet, transform.position, Quaternion.identity);
         Rigidbody2D rb = b.GetComponent<Rigidbody2D>();
-        rb.AddForce(Vector2.left * 6f, ForceMode2D.Impulse);
+        rb.AddForce(Vector2.left * 6.7f, ForceMode2D.Impulse);
     }
     void ShootRight()
     {
         GameObject b = Instantiate(bullet, transform.position, Quaternion.identity);
         Rigidbody2D rb = b.GetComponent<Rigidbody2D>();
-        rb.AddForce(Vector2.right * 6f, ForceMode2D.Impulse);
+        rb.AddForce(Vector2.right * 6.7f, ForceMode2D.Impulse);
     }
     
     void OnCollisionEnter2D(Collision2D collision)

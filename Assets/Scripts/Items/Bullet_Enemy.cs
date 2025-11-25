@@ -1,27 +1,26 @@
 using UnityEngine;
 
-public class BulletController : MonoBehaviour
+public class Bullet_Enemy : MonoBehaviour
 {
     public ParticleSystem explosionParticle;
     public ParticleSystem onWallExplosionParticle;
     public ParticleSystem failedExplosionParticle;
 
-    float lifeTime = 0.7f;
+    float lifeTime = 0.9f;
     bool isDead = false;
     
     void Start()
     {
-        // 2秒後に自動で爆発扱い
         Invoke(nameof(ExplodeTime), lifeTime);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (isDead) return;
 
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            ExplodeEnemy();
+            ExplodePlayer();
         }
         else
         {
@@ -29,7 +28,7 @@ public class BulletController : MonoBehaviour
         }
     }
 
-    void ExplodeEnemy()
+    void ExplodePlayer()
     {
         isDead = true;
         ParticleSystem p = Instantiate(explosionParticle, transform.position, Quaternion.identity);

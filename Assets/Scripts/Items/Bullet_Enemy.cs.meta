@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: e5699e8ae3c8b47fcb94a18ae644e4ec
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - explosionParticle: {fileID: 3084945396256596566, guid: f21464e71419d4b48bbb309628ad078e, type: 3}
+  - onWallExplosionParticle: {fileID: 8748415794333560789, guid: 4f5daf98e96ee489da868b3ee40c7060, type: 3}
+  - failedExplosionParticle: {fileID: 1467048438450755906, guid: 1e03a71257844434d904daaab9ced262, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

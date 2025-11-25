@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class SceneManagerScr : MonoBehaviour
 {
@@ -15,6 +16,10 @@ public class SceneManagerScr : MonoBehaviour
     public static SceneManagerScr Instance;
     private float fadeDuration = 1.0f;
     public static int urasshnumber = 3;
+    [SerializeField] private TMP_Text gameOverText;
+    [SerializeField] private TMP_Text retryText;
+    [SerializeField] private float gameOverFadeDuration = 2.0f;
+    public bool isGameOver = false;
 
     private void Awake()
     {
@@ -42,7 +47,10 @@ public class SceneManagerScr : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.R) && isGameOver == true)
+        {
+            SceneManagerScr.Instance.Retry();
+        }
     }
 
     public void FadeAndLoad(string sceneName)
@@ -60,29 +68,16 @@ public class SceneManagerScr : MonoBehaviour
         yield return StartCoroutine(FadeIn());
     }
 
-    // public IEnumerator Fade(float targetAlpha)
-    // {
-    //     timer = 0;
-    //     while (timer <= 2.0f)
-    //     {
-    //         timer += Time.deltaTime;
-    //         float t = timer * 1 / 2;
-    //         float a = Mathf.Lerp(currentAlpha, targetAlpha, t);
-    //         panelColor.a = a;
-    //         panel.color = panelColor;
-
-    //         yield return null;
-    //     }
-    //     panelColor.a = targetAlpha;
-    //     panel.color = panelColor;
-    // }
-
     private IEnumerator FadeOut()
     {
         panel.gameObject.SetActive(true);
 
         float t = 0;
         Color c = panel.color;
+
+        if (c.a >= 1f)
+            yield break;
+
         while (t < fadeDuration)
         {
             t += Time.deltaTime;
@@ -110,4 +105,105 @@ public class SceneManagerScr : MonoBehaviour
 
         panel.gameObject.SetActive(false);
     }
+
+    public void GameOver()
+    {
+        isGameOver = true;
+        StartCoroutine(GameOverSequence());
+    }
+    public IEnumerator GameOverSequence()
+    {
+        // Retryテキストは非表示
+        retryText.gameObject.SetActive(false);
+        
+        // PanelとGameOverテキストを表示
+        panel.gameObject.SetActive(true);
+        gameOverText.gameObject.SetActive(true);
+
+        // フェード用カラー
+        Color panelColor = panel.color;
+        Color gameOverColor = gameOverText.color;
+
+        panelColor.a = 0;
+        gameOverColor.a = 0;
+
+        panel.color = panelColor;
+        gameOverText.color = gameOverColor;
+
+        float t = 0;
+        while (t < gameOverFadeDuration)
+        {
+            t += Time.deltaTime;
+            float lerp = t / gameOverFadeDuration;
+
+            panelColor.a = Mathf.Lerp(0, 1, lerp);
+            gameOverColor.a = Mathf.Lerp(0, 1, lerp);
+
+            panel.color = panelColor;
+            gameOverText.color = gameOverColor;
+
+            yield return null;
+        }
+
+        // フェード完了時、Retryテキストを表示
+        retryText.gameObject.SetActive(true);
+    }
+
+    public void Retry()
+    {
+        StartCoroutine(RetrySequence());
+    }
+
+    private IEnumerator RetrySequence()
+    {
+        retryText.gameObject.SetActive(false);
+
+        panel.gameObject.SetActive(true);
+        gameOverText.gameObject.SetActive(true);
+
+        Color panelColor = panel.color;
+        Color gameOverColor = gameOverText.color;
+
+        float t = 0;
+
+        // 黒フェードイン（黒くなる）
+        while (t < gameOverFadeDuration)
+        {
+            t += Time.deltaTime;
+            float lerp = t / gameOverFadeDuration;
+
+            panelColor.a = Mathf.Lerp(panelColor.a, 1f, lerp);
+            gameOverColor.a = Mathf.Lerp(gameOverColor.a, 1f, lerp);
+
+            panel.color = panelColor;
+            gameOverText.color = gameOverColor;
+
+            yield return null;
+        }
+
+        // シーン再読み込み
+        Scene current = SceneManager.GetActiveScene();
+        isGameOver = false;
+        yield return SceneManager.LoadSceneAsync(current.name);
+
+        // Panel と GameOverText フェードアウト（明るく・文字消す）
+        t = 0;
+        while (t < gameOverFadeDuration)
+        {
+            t += Time.deltaTime;
+            float lerp = t / gameOverFadeDuration;
+
+            panelColor.a = Mathf.Lerp(1f, 0f, lerp);
+            gameOverColor.a = Mathf.Lerp(1f, 0f, lerp);
+
+            panel.color = panelColor;
+            gameOverText.color = gameOverColor;
+
+            yield return null;
+        }
+
+        panel.gameObject.SetActive(false);
+        gameOverText.gameObject.SetActive(false);
+    }
+
 }

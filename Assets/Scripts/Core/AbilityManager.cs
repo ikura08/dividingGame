@@ -30,6 +30,7 @@ public class AbilityManager : MonoBehaviour
     GameObject target;     // 長押し中のオブジェクト
     private float spaceDuration = 0f;
     public BatteryConfig config;
+    public BatteryController bController;
     // Start is called before the first frame update
     void Start()
     {
@@ -61,8 +62,13 @@ public class AbilityManager : MonoBehaviour
         {
             if (trigger != null)
             {
-                trigger.CoreTrigger();
-                BatteryController.Instance.UseBattery(config.coreBatteryCost);
+                if (bController.currentBattery < config.coreBatteryCost)
+                    SceneManagerScr.Instance.GameOver();
+                else
+                {
+                    trigger.CoreTrigger();
+                    BatteryController.Instance.UseBattery(config.coreBatteryCost);
+                }
             }
             spaceDuration = -1.0f;
         }
@@ -127,11 +133,6 @@ public class AbilityManager : MonoBehaviour
             holdTime = 0f;
         }
 
-        // if (Input.GetKeyDown(KeyCode.Return))
-        // {
-        //     collection.CoreBring();
-        // }
-
     } //Updateの終わり
 
     public void CoreChanging(Collision2D collision)
@@ -156,10 +157,6 @@ public class AbilityManager : MonoBehaviour
 
         selectObject = hit.gameObject;
         selectRb = selectObject.GetComponent<Rigidbody2D>();
-
-        // StartCoroutine(LightAppearance());
-        // if (selectObject.CompareTag("core"))
-        // selectRenderer.material = white;
 
         if (selectRb)
         {

@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class EnemyJump : MonoBehaviour
 {
-    public float timer = 0f;
-    public int jumpCount = 2;
-    public float jumpInterval = 4f;
-    public float jumpForce = 8f;
+    private float timer = 0f;
+    private int jumpCount = 2;
+    private float jumpInterval = 2f;
+    private float jumpForce = 7f;
     public bool isGround = true;
     Rigidbody2D rb;
     void Start()

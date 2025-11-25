@@ -9,7 +9,7 @@ public class BatteryController : MonoBehaviour
     [Header("UI")]
     public Slider[] sliders;
     public BatteryConfig config;
-    private int currentBattery;
+    public int currentBattery;
     private int totalMaxBattery;
 
     void Awake()
@@ -37,6 +37,15 @@ public class BatteryController : MonoBehaviour
             {
                 sliders[i].gameObject.SetActive(false); // 使わない分は非表示
             }
+        }
+    }
+
+    void Update()
+    {
+        Debug.Log("残量は" + currentBattery, gameObject);
+        if (currentBattery <= 0)
+        {
+            Debug.Log("亡くなった");
         }
     }
 
@@ -78,4 +87,5 @@ public class BatteryController : MonoBehaviour
             }
         }
     }
+    
 }

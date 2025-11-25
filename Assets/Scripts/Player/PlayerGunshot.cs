@@ -10,6 +10,7 @@ public class PlayerGunshot : MonoBehaviour
     public GameObject bullet;
     PlayerMovement movement;
     public BatteryConfig config;
+    public BatteryController bController;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,8 +22,15 @@ public class PlayerGunshot : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            // shotParticle.Emit(1);
-            Shoot();
+            Debug.Log("残量は" + bController.currentBattery + "、コストは" + config.bulletCost);
+            if (bController.currentBattery < config.bulletCost)
+            {
+                SceneManagerScr.Instance.GameOver();
+            }
+            else if (bController.currentBattery >= config.bulletCost)
+            {
+                Shoot();
+            }
         }
     }
 

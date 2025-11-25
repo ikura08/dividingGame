@@ -12,10 +12,17 @@ public class PlayerPhaseController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) && SceneManagerScr.Instance.isGameOver == false)
         {
-            Scene current = SceneManager.GetActiveScene();
-            SceneManagerScr.Instance.FadeAndLoad(current.name);
+            if (SceneManagerScr.Instance.isGameOver == false)
+            {
+                // フェード制御を止める
+                phase = 2; 
+                timer = 0;
+
+                Scene current = SceneManager.GetActiveScene();
+                SceneManagerScr.Instance.FadeAndLoad(current.name);
+            }
         }
 
         if (phase == 0) FadeOutPhase();

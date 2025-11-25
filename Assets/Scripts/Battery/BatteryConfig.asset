@@ -16,6 +16,8 @@ MonoBehaviour:
   enemybatteryRecover: 35
   bulletCost: 5
   coreBatteryCost: 20
+  enemyContactDamage: 7
+  enemyBulletDamage: 7
   moveBatteryCost: 2
   maxBatteryPerUnit: 100
-  batteryCount: 4
+  batteryCount: 1

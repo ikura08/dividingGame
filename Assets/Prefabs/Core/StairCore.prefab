@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2071069362235771911}
   - component: {fileID: 942207485567245867}
   - component: {fileID: 3100363921665849729}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: PartA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -159,7 +159,7 @@ GameObject:
   - component: {fileID: 3944291651890144400}
   - component: {fileID: 8669846089434045954}
   - component: {fileID: 4171301908641756679}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: LightingChaserG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -263,7 +263,7 @@ GameObject:
   - component: {fileID: 1917517224841635532}
   - component: {fileID: 3472924406802228744}
   - component: {fileID: 450588960406372551}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: StairCore
   m_TagString: Core
   m_Icon: {fileID: 0}
@@ -454,7 +454,7 @@ GameObject:
   - component: {fileID: 9138090200303559497}
   - component: {fileID: 7577520541425067369}
   - component: {fileID: 242898272121733560}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PartB
   m_TagString: Untagged
   m_Icon: {fileID: 0}

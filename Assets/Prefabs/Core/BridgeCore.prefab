@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 886180119228268978}
   - component: {fileID: 4801351048350972704}
   - component: {fileID: 221759125270172453}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: LightingChaserG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,7 +113,7 @@ GameObject:
   - component: {fileID: 4535149227414892610}
   - component: {fileID: 8681318559187563175}
   - component: {fileID: 6349707983951100709}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PartB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -245,7 +245,7 @@ GameObject:
   - component: {fileID: 6300203863030941981}
   - component: {fileID: 2986667570932280083}
   - component: {fileID: 5352417082163948174}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BridgeCore
   m_TagString: Core
   m_Icon: {fileID: 0}
@@ -438,7 +438,7 @@ GameObject:
   - component: {fileID: 8879002904582401581}
   - component: {fileID: 4251585571458213505}
   - component: {fileID: 6886059507054807946}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: PartA
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 915067311383575317}
   - component: {fileID: 7579299271032971359}
   - component: {fileID: 2531941671415990955}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PartB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142,7 +142,7 @@ GameObject:
   - component: {fileID: -1235052168989329045}
   - component: {fileID: 7910941676292389771}
   - component: {fileID: 3651332980130396052}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PoisonCore
   m_TagString: Poison
   m_Icon: {fileID: 0}
@@ -318,7 +318,7 @@ GameObject:
   - component: {fileID: 4016379052689081447}
   - component: {fileID: 8541145553936550358}
   - component: {fileID: 212451741334459134}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: PartA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -465,7 +465,7 @@ GameObject:
   - component: {fileID: 677152762337681987}
   - component: {fileID: 6437750014322048723}
   - component: {fileID: 9035922547797840836}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: LightingChaserP (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

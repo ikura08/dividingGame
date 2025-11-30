@@ -18,6 +18,6 @@ MonoBehaviour:
   coreBatteryCost: 20
   enemyContactDamage: 7
   enemyBulletDamage: 15
-  moveBatteryCost: 2
+  moveBatteryCost: 0
   maxBatteryPerUnit: 100
   batteryCount: 3

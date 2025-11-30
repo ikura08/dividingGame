@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6596172968591365952}
   - component: {fileID: 717107483572705308}
   - component: {fileID: 8188027899026798750}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PartB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 7880262307116161912}
   - component: {fileID: 2983702030762779413}
   - component: {fileID: 9186276841897770293}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: LightingChaserB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -245,7 +245,7 @@ GameObject:
   - component: {fileID: 6214708722944883036}
   - component: {fileID: 3265158659260774651}
   - component: {fileID: 7688698548006655684}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: WarpCore2
   m_TagString: Core
   m_Icon: {fileID: 0}
@@ -437,7 +437,7 @@ GameObject:
   - component: {fileID: 149658648020049830}
   - component: {fileID: 8593744728647744098}
   - component: {fileID: 357731429797329853}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: PartA
   m_TagString: Untagged
   m_Icon: {fileID: 0}

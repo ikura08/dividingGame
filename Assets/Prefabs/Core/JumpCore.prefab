@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5560658704088999629}
   - component: {fileID: 2096897313603140189}
   - component: {fileID: 4118784672937908042}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: LightingChaserR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,7 +113,7 @@ GameObject:
   - component: {fileID: 3957389784577182186}
   - component: {fileID: 2361618060793235060}
   - component: {fileID: 5004705627862711517}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PartB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -245,7 +245,7 @@ GameObject:
   - component: {fileID: 1052776719056133474}
   - component: {fileID: 6644706229408145045}
   - component: {fileID: 2843816063953917285}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: JumpCore
   m_TagString: Core
   m_Icon: {fileID: 0}
@@ -435,7 +435,7 @@ GameObject:
   - component: {fileID: 7475304786878153852}
   - component: {fileID: 4795799190761415831}
   - component: {fileID: 7791519792556890049}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: PartA
   m_TagString: Untagged
   m_Icon: {fileID: 0}

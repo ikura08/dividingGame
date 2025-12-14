@@ -141,7 +141,6 @@ GameObject:
   - component: {fileID: 4921121316748080660}
   - component: {fileID: 4821883827137942232}
   - component: {fileID: 448593383942963211}
-  - component: {fileID: 5067274216098635213}
   m_Layer: 6
   m_Name: PartA (1)
   m_TagString: Untagged
@@ -184,7 +183,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b774a7258108c4b39960d2927324b96e, type: 2}
+  - {fileID: -876546973899608171, guid: 8c43bc2e65ad642949310ce1fb14840b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -261,23 +260,88 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &5067274216098635213
+--- !u!1 &3482319394888910964
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7711736721043060840}
+  - component: {fileID: 6817784625742093425}
+  m_Layer: 0
+  m_Name: Light 2D
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7711736721043060840
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3482319394888910964}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 61.640003, y: 20.7, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5238764072154765139}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6817784625742093425
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 629655986933446115}
+  m_GameObject: {fileID: 3482319394888910964}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 11400000, guid: af8ac6ff1dea84aa5a52efea8b8850e9, type: 2}
-  isGlobal: 1
-  blendDistance: 0
-  weight: 1
-  priority: 0
+  m_ComponentVersion: 1
+  m_LightType: 3
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 0.5
+  m_Color: {r: 0.54529184, g: 0.12615702, b: 0.5943396, a: 1}
+  m_Intensity: 2
+  m_LightVolumeIntensity: 1
+  m_LightVolumeIntensityEnabled: 0
+  m_ApplyToSortingLayers: 00000000
+  m_LightCookieSprite: {fileID: 0}
+  m_DeprecatedPointLightCookieSprite: {fileID: 0}
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_OverlapOperation: 0
+  m_NormalMapDistance: 3
+  m_NormalMapQuality: 2
+  m_UseNormalMap: 0
+  m_ShadowIntensityEnabled: 0
+  m_ShadowIntensity: 0.75
+  m_ShadowVolumeIntensityEnabled: 0
+  m_ShadowVolumeIntensity: 0.75
+  m_LocalBounds:
+    m_Center: {x: 0, y: -0.00000011920929, z: 0}
+    m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 2.5
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: 0.5, z: 0}
+  - {x: -0.5, y: 0.5, z: 0}
 --- !u!1 &3487344475173211262
 GameObject:
   m_ObjectHideFlags: 0
@@ -419,7 +483,6 @@ GameObject:
   - component: {fileID: 5383286893179798263}
   - component: {fileID: 7441531129225906118}
   - component: {fileID: 8531807777087872505}
-  - component: {fileID: 1133263118071969099}
   m_Layer: 6
   m_Name: PartA (2)
   m_TagString: Untagged
@@ -462,7 +525,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b774a7258108c4b39960d2927324b96e, type: 2}
+  - {fileID: -876546973899608171, guid: 8c43bc2e65ad642949310ce1fb14840b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -539,23 +602,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1133263118071969099
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4418778980139512711}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 11400000, guid: af8ac6ff1dea84aa5a52efea8b8850e9, type: 2}
-  isGlobal: 1
-  blendDistance: 0
-  weight: 1
-  priority: 0
 --- !u!1 &4898296631281015225
 GameObject:
   m_ObjectHideFlags: 0
@@ -567,7 +613,6 @@ GameObject:
   - component: {fileID: 5565786675496948269}
   - component: {fileID: 758728433490995461}
   - component: {fileID: 2850350622028729455}
-  - component: {fileID: 4736851791592473768}
   m_Layer: 6
   m_Name: PartA (3)
   m_TagString: Untagged
@@ -610,7 +655,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b774a7258108c4b39960d2927324b96e, type: 2}
+  - {fileID: -876546973899608171, guid: 8c43bc2e65ad642949310ce1fb14840b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -687,23 +732,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &4736851791592473768
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4898296631281015225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 11400000, guid: af8ac6ff1dea84aa5a52efea8b8850e9, type: 2}
-  isGlobal: 1
-  blendDistance: 0
-  weight: 1
-  priority: 0
 --- !u!1 &6949125491206653884
 GameObject:
   m_ObjectHideFlags: 0
@@ -715,7 +743,6 @@ GameObject:
   - component: {fileID: 2609993545245352726}
   - component: {fileID: 8141900422272970511}
   - component: {fileID: 183617206425547892}
-  - component: {fileID: 5043248476171730659}
   m_Layer: 6
   m_Name: PartA
   m_TagString: Untagged
@@ -758,7 +785,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b774a7258108c4b39960d2927324b96e, type: 2}
+  - {fileID: -876546973899608171, guid: 8c43bc2e65ad642949310ce1fb14840b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -835,23 +862,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &5043248476171730659
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6949125491206653884}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 11400000, guid: af8ac6ff1dea84aa5a52efea8b8850e9, type: 2}
-  isGlobal: 1
-  blendDistance: 0
-  weight: 1
-  priority: 0
 --- !u!1 &7290033702354545975
 GameObject:
   m_ObjectHideFlags: 0
@@ -892,6 +902,7 @@ Transform:
   - {fileID: 1434411282533358259}
   - {fileID: 5383286893179798263}
   - {fileID: 5565786675496948269}
+  - {fileID: 7711736721043060840}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6950806324870871755
@@ -971,9 +982,77 @@ CompositeCollider2D:
   m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths: []
+  m_ColliderPaths:
+  - m_Collider: {fileID: 183617206425547892}
+    m_ColliderPaths:
+    - - X: 2500000
+        Y: -250000
+      - X: -2500000
+        Y: -250000
+      - X: -2500000
+        Y: -2750001
+      - X: 2500000
+        Y: -2750001
+  - m_Collider: {fileID: 448593383942963211}
+    m_ColliderPaths:
+    - - X: 1625000
+        Y: 1125000
+      - X: -1625000
+        Y: 1125000
+      - X: -1625000
+        Y: -2124999
+      - X: 1625000
+        Y: -2124999
+  - m_Collider: {fileID: 722155232393395370}
+    m_ColliderPaths:
+    - - X: 1375000
+        Y: 875000
+      - X: -1375000
+        Y: 875000
+      - X: -1375000
+        Y: -1874999
+      - X: 1375000
+        Y: -1874999
+  - m_Collider: {fileID: 1008757150820587208}
+    m_ColliderPaths:
+    - - X: 2250000
+        Y: -500000
+      - X: -2250000
+        Y: -500000
+      - X: -2250000
+        Y: -2500001
+      - X: 2250000
+        Y: -2500001
+  - m_Collider: {fileID: 2850350622028729455}
+    m_ColliderPaths:
+    - - X: 749999
+        Y: -324998
+      - X: 249999
+        Y: -324998
+      - X: 249999
+        Y: -824998
+      - X: 749999
+        Y: -824998
+  - m_Collider: {fileID: 8531807777087872505}
+    m_ColliderPaths:
+    - - X: -249999
+        Y: -324998
+      - X: -749999
+        Y: -324998
+      - X: -749999
+        Y: -824998
+      - X: -249999
+        Y: -824998
   m_CompositePaths:
-    m_Paths: []
+    m_Paths:
+    - - {x: 0.2499707, y: -0.2750001}
+      - {x: 0.2499707, y: -0.025}
+      - {x: 0.16250001, y: -0.0249706}
+      - {x: 0.1624707, y: 0.112500004}
+      - {x: -0.16250001, y: 0.1124707}
+      - {x: -0.16252941, y: -0.025}
+      - {x: -0.25, y: -0.0250293}
+      - {x: -0.2499707, y: -0.2750001}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0

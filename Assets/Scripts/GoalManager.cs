@@ -26,7 +26,8 @@ public class GoalManager : MonoBehaviour
     {
         if (canTap == true && Input.GetMouseButtonDown(0))
         {
-            SceneManager.LoadScene("Select");
+            Scene current = SceneManager.GetActiveScene();
+            SceneManagerScr.Instance.FadeAndLoad(current.name);
         }
     }
 

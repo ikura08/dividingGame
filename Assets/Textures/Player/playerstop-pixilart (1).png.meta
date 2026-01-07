@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f51a2381b63bf43e8bc95cff31935422
+guid: 22892bffb5065413a853d03596e6997c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -136,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spaceman2-pixilart_0
+      name: playerstop-pixilart (1)_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 17
-        width: 9
-        height: 17
+        y: 36
+        width: 23
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 56b66ce94d401414a9a860f549e0605b
-      internalID: -1121208069
+      spriteID: 57c30f5b9008d4b659a302f26feebf63
+      internalID: 2099060063
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spaceman2-pixilart_1
+      name: playerstop-pixilart (1)_1
       rect:
         serializedVersion: 2
-        x: 9
-        y: 17
-        width: 9
-        height: 17
+        x: 23
+        y: 36
+        width: 23
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: af2fbdebaf3234400ae4277c814612f2
-      internalID: 502579056
+      spriteID: 432d74d18a77841468c341fcf7b27893
+      internalID: -741824467
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spaceman2-pixilart_2
+      name: playerstop-pixilart (1)_2
       rect:
         serializedVersion: 2
-        x: 18
-        y: 17
-        width: 9
-        height: 17
+        x: 46
+        y: 36
+        width: 23
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,20 +192,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e83eefcaf81341478b98ce6fa46df4a
-      internalID: 1342223742
+      spriteID: d4ce803097db7443a9fb60818c95cf47
+      internalID: 778188298
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spaceman2-pixilart_3
+      name: playerstop-pixilart (1)_3
       rect:
         serializedVersion: 2
-        x: 27
-        y: 17
-        width: 9
-        height: 17
+        x: 69
+        y: 36
+        width: 23
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,20 +213,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d52e597a3eb34041982021e17e8b2d2
-      internalID: 54766330
+      spriteID: 2374c8cc1749f48a88e7c44b44857446
+      internalID: -955406705
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spaceman2-pixilart_4
+      name: playerstop-pixilart (1)_4
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 9
-        height: 17
+        width: 23
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -234,20 +234,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dde15430094f64e49aa909d3e3577b7f
-      internalID: 631530290
+      spriteID: 8bb1d44bfe2a24e6aaaa00b437af51b4
+      internalID: 1052909342
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spaceman2-pixilart_5
+      name: playerstop-pixilart (1)_5
       rect:
         serializedVersion: 2
-        x: 9
+        x: 23
         y: 0
-        width: 9
-        height: 17
+        width: 23
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -255,20 +255,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 983b74a9f6d354994926f383fd235520
-      internalID: 144045521
+      spriteID: 30e7c12c8bb954954b2319cd2c432be9
+      internalID: -547692231
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spaceman2-pixilart_6
+      name: playerstop-pixilart (1)_6
       rect:
         serializedVersion: 2
-        x: 18
+        x: 46
         y: 0
-        width: 9
-        height: 17
+        width: 23
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -276,20 +276,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a9c33a564355b4ba69c4b54f790f678c
-      internalID: 208213327
+      spriteID: 80929e595707b4ded9809d17a9a4d53d
+      internalID: -1719262578
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spaceman2-pixilart_7
+      name: playerstop-pixilart (1)_7
       rect:
         serializedVersion: 2
-        x: 27
+        x: 69
         y: 0
-        width: 9
-        height: 17
+        width: 23
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -297,8 +297,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a39307947597b437891b5154b4a9b763
-      internalID: -331091730
+      spriteID: 178d0eb7ad27042efab4c9638238ddd7
+      internalID: -175361364
       vertices: []
       indices: 
       edges: []
@@ -314,14 +314,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      spaceman2-pixilart_0: -1121208069
-      spaceman2-pixilart_1: 502579056
-      spaceman2-pixilart_2: 1342223742
-      spaceman2-pixilart_3: 54766330
-      spaceman2-pixilart_4: 631530290
-      spaceman2-pixilart_5: 144045521
-      spaceman2-pixilart_6: 208213327
-      spaceman2-pixilart_7: -331091730
+      playerstop-pixilart (1)_0: 2099060063
+      playerstop-pixilart (1)_1: -741824467
+      playerstop-pixilart (1)_2: 778188298
+      playerstop-pixilart (1)_3: -955406705
+      playerstop-pixilart (1)_4: 1052909342
+      playerstop-pixilart (1)_5: -547692231
+      playerstop-pixilart (1)_6: -1719262578
+      playerstop-pixilart (1)_7: -175361364
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

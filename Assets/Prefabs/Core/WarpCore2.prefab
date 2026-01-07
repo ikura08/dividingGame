@@ -140,7 +140,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7880262307116161912}
   - component: {fileID: 2983702030762779413}
-  - component: {fileID: 9186276841897770293}
   m_Layer: 11
   m_Name: LightingChaserB
   m_TagString: Untagged
@@ -215,23 +214,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &9186276841897770293
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3769744634179637468}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 11400000, guid: af8ac6ff1dea84aa5a52efea8b8850e9, type: 2}
-  isGlobal: 1
-  blendDistance: 0
-  weight: 1
-  priority: 0
 --- !u!1 &4928256168148429278
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,7 +501,6 @@ GameObject:
   - component: {fileID: 7991700326234708917}
   - component: {fileID: 149658648020049830}
   - component: {fileID: 8593744728647744098}
-  - component: {fileID: 357731429797329853}
   m_Layer: 11
   m_Name: PartA
   m_TagString: Untagged
@@ -639,20 +620,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &357731429797329853
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7415061576548903856}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 11400000, guid: af8ac6ff1dea84aa5a52efea8b8850e9, type: 2}
-  isGlobal: 1
-  blendDistance: 0
-  weight: 1
-  priority: 0

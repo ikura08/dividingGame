@@ -28,7 +28,7 @@ public class AbilityManager : MonoBehaviour
     private GameObject WholeLight;
     float holdTime = 0f;   // 長押ししている時間
     GameObject target;     // 長押し中のオブジェクト
-    private float spaceDuration = 0f;
+    public float spaceDuration = 0f;
     public BatteryConfig config;
     public BatteryController bController;
     // Start is called before the first frame update
@@ -58,7 +58,7 @@ public class AbilityManager : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Space))
             spaceDuration = 0;
 
-        if (spaceDuration >= 0.5f)
+        if (spaceDuration >= 0.7f)
         {
             if (trigger != null)
             {

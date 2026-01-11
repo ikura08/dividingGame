@@ -38,7 +38,7 @@ public class CoreMove : MonoBehaviour, IMovable, ITrigger
     {
         velocity = Mrb.velocity;
         distance = Vector2.Distance(transform.position, playerTransform.position);
-    }  //Updateの終わり
+    }
 
     public void Tap()
     {

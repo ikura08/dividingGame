@@ -44,9 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d15d7d93b7334c86b7acbe3e6f8e2c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerObject: {fileID: 6070889339052195946, guid: df5b3c5e6ca6147bcb1b909fe8068054, type: 3}
-  selectObject: {fileID: 6070889339052195946, guid: df5b3c5e6ca6147bcb1b909fe8068054, type: 3}
+  playerObject: {fileID: 3142115931150579404, guid: 6ac86c32e055e463587e41d01f3e366c, type: 3}
+  selectObject: {fileID: 6996169661793555202, guid: 5cc744f0a3800441eace4b1604c91ccc, type: 3}
   coreObject: {fileID: 6996169661793555202, guid: 5cc744f0a3800441eace4b1604c91ccc, type: 3}
   WholeLight: {fileID: 0}
+  spaceDuration: 0
   config: {fileID: 11400000, guid: e36d9ba9944f64fd688888f5d84d331f, type: 2}
   bController: {fileID: 2705231148982891050, guid: fe6615265ce8041048a94b60f8b006bd, type: 3}

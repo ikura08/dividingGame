@@ -23,7 +23,6 @@ public class AbilityManager : MonoBehaviour
     IconChange iconChangeScr;
     PlayerMovement playerMoveScr;
     IMovable selectMovable;  //タップしたオブジェクトのmovable
-    bool coreCollection = false;  //メタルを回収をしたかどうか
     [SerializeField]
     private GameObject WholeLight;
     float holdTime = 0f;   // 長押ししている時間
@@ -162,17 +161,17 @@ public class AbilityManager : MonoBehaviour
         trigger = hittedTrigger;
     }
 
-    private IEnumerator LightAppearance()
-    {
-        Vector3 pos = selectObject.transform.position;
-        pos.z -= 9f;
-        WholeLight.transform.position = pos;
+    // private IEnumerator LightAppearance()
+    // {
+    //     Vector3 pos = selectObject.transform.position;
+    //     pos.z -= 9f;
+    //     WholeLight.transform.position = pos;
 
-        WholeLight.SetActive(true);
+    //     WholeLight.SetActive(true);
 
-        yield return new WaitForSeconds(0.15f);
+    //     yield return new WaitForSeconds(0.15f);
 
-        WholeLight.SetActive(false);
-        yield return null;
-    }
+    //     WholeLight.SetActive(false);
+    //     yield return null;
+    // }
 }

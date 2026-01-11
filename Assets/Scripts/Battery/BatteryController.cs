@@ -11,6 +11,10 @@ public class BatteryController : MonoBehaviour
     public BatteryConfig config;
     public int currentBattery;
     private int totalMaxBattery;
+    private float timer = 0;
+    public int batteryLevel = 0;
+    [SerializeField]
+    LightController lightController;
 
     void Awake()
     {
@@ -19,11 +23,11 @@ public class BatteryController : MonoBehaviour
 
     void Start()
     {
-        // 全体最大値をScriptableObjectから算出
         totalMaxBattery = config.maxBatteryPerUnit * config.batteryCount;
-        currentBattery = totalMaxBattery;
+        currentBattery = totalMaxBattery - 1;
 
-        // スライダー初期設定
+        // batteryLevel = sliders.Length;
+
         for (int i = 0; i < sliders.Length; i++)
         {
             sliders[i].maxValue = config.maxBatteryPerUnit;
@@ -42,6 +46,13 @@ public class BatteryController : MonoBehaviour
 
     void Update()
     {
+        timer += Time.deltaTime;
+        if (currentBattery > 0 && timer >= 1f)
+        {
+            UseBattery(config.seondCost);
+            timer = 0;
+        }
+
         if (currentBattery <= 0)
         {
             SceneManagerScr.Instance.GameOver();
@@ -64,6 +75,22 @@ public class BatteryController : MonoBehaviour
     void UpdateUI()
     {
         int remaining = currentBattery;
+
+        if (remaining <= 100)
+        {
+            lightController.ChangeLightSize(0);
+            AudioController.Instance.BGMFillter(0);
+        }
+        else if (remaining <= 200)
+        {
+            lightController.ChangeLightSize(1);
+            AudioController.Instance.BGMFillter(1);
+        }
+        else if (remaining <= 300)
+        {
+            lightController.ChangeLightSize(2);
+            AudioController.Instance.BGMFillter(2);
+        }
 
         for (int i = 0; i < sliders.Length; i++)
         {

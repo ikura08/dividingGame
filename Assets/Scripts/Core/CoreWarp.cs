@@ -8,9 +8,7 @@ public class CoreWarp : MonoBehaviour, ITrigger, ICollection
 {
     public GameObject pairObject;
     public GameObject playerObject;
-    [SerializeField]
     private Transform playerTransform;
-    [SerializeField]
     private Rigidbody2D coreRB;
     Vector2 warpVector;
     Vector3 scale;

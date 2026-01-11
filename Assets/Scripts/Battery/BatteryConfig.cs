@@ -9,6 +9,9 @@ public class BatteryConfig : ScriptableObject
     [Header("敵撃破での回復量")]
     public int enemybatteryRecover = 35;
 
+    [Header("毎秒のの消費量")]
+    public int seondCost = 3;
+
     [Header("弾の消費量")]
     public int bulletCost = 5;
 

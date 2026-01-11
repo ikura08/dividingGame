@@ -39,7 +39,7 @@ public class CoreProvider : MonoBehaviour
 
     public IEnumerator ProvidingY(Vector3 size, int number)
     {
-        distance = size.x;
+        distance = size.y;
         point = new Vector3(point.x, point.y + distance, -0.5f);
         corePrefab.transform.localScale = size;
         GameObject core = Instantiate(corePrefab, point, Quaternion.identity);

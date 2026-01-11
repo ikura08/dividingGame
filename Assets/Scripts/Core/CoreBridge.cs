@@ -7,12 +7,11 @@ public class CoreBridge : MonoBehaviour, ITrigger, ICollection
     public CoreProvider provider;
     [SerializeField]
     private Transform playerTransform;
-    [SerializeField]
     private Rigidbody2D coreRB;
     Vector3 scale;
     Vector3 originalScale;
     public int thisCoreNumber;
-    public bool isCreating = false; //スペース連打のバグ修正
+    private bool isCreating = false; //スペース連打のバグ修正
     // Start is called before the first frame update
     void Start()
     {

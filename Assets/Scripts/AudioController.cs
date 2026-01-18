@@ -38,7 +38,6 @@ public class AudioController : MonoBehaviour
     
     public void Sound1()
     {
-        Debug.Log("音楽再生");
         audioSource.PlayOneShot(sound);
     }
 
@@ -53,11 +52,9 @@ public class AudioController : MonoBehaviour
 
     IEnumerator UpdateBGM(float targetValue)
     {
-        // 1. Mixerから現在の値を取得する
         float startCutoffValue;
         if (!mainMixer.GetFloat(cutoffParam, out startCutoffValue))
         {
-            // もし取得に失敗した時のためのバックアップ（初期値など）
             startCutoffValue = 22000f; 
         }
 

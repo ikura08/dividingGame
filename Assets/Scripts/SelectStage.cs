@@ -6,11 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class SelectStage : MonoBehaviour
 {
-    public StageLoader stageLoaderScr;
     public GameObject[] clearStageBack;
     public GameObject[] movingLight;
     public Button[] buttons;
-    public static int nextStage =0;
+    public static int nextStage =1;
     public static int clearCount = nextStage -1;
     // Start is called before the first frame update
     void Start()
@@ -38,7 +37,7 @@ public class SelectStage : MonoBehaviour
             buttons[i].gameObject.SetActive(true);
 
             int stageIndex = i + 1;
-            buttons[i].onClick.AddListener(() => LoadStage(stageIndex));
+            // buttons[i].onClick.AddListener(() => LoadStage(stageIndex));
         }
 
         if (movingLight[nextStage-1] != null)
@@ -51,10 +50,10 @@ public class SelectStage : MonoBehaviour
 
     }
 
-    void LoadStage(int stageNumber)
-    {
-        string sceneName = "Stage" + stageNumber;
-        // SceneManager.LoadScene(sceneName);
-        SceneManagerScr.Instance.FadeAndLoad(sceneName);
-    }
+    // void LoadStage(int stageNumber)
+    // {
+    //     string sceneName = "Stage" + stageNumber;
+    //     // SceneManager.LoadScene(sceneName);
+    //     SceneManagerScr.Instance.FadeAndLoad(sceneName);
+    // }
 }

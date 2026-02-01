@@ -14,8 +14,7 @@ public class CoreWarp : MonoBehaviour, ITrigger, ICollection
     Vector3 scale;
     Vector3 originalScale;
     bool playerTouch = false;
-
-
+    public float emergePlace = 1.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -50,7 +49,7 @@ public class CoreWarp : MonoBehaviour, ITrigger, ICollection
     {
         if (playerTouch == true)
         {
-            warpVector = new Vector2(pairObject.transform.position.x, pairObject.transform.position.y + 1.5f);
+            warpVector = new Vector2(pairObject.transform.position.x, pairObject.transform.position.y + emergePlace);
             playerObject.transform.position = warpVector;
         }
     }

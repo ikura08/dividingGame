@@ -27,6 +27,9 @@ public class BatteryConfig : ScriptableObject
     [Header("歩行の消費量")]
     public int moveBatteryCost = 2;
 
+    [Header("ライトアタックの消費量")]
+    public int lightAttackCost = 10;
+
     [Header("一本あたりのバッテリー量")]
     public int maxBatteryPerUnit = 100;
 

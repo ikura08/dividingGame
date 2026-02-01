@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: a06275698c5724ee48130f284d2a652b
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - lightController: {instanceID: 0}
+  - batteryController: {fileID: 2705231148982891050, guid: fe6615265ce8041048a94b60f8b006bd, type: 3}
+  - config: {fileID: 11400000, guid: e36d9ba9944f64fd688888f5d84d331f, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

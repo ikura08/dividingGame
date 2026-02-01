@@ -12,6 +12,7 @@ TagManager:
   - Core
   - Enemy
   - Bullet
+  - Drop
   layers:
   - Default
   - TransparentFX

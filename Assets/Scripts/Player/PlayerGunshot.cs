@@ -10,7 +10,6 @@ public class PlayerGunshot : MonoBehaviour
     public GameObject bullet;
     PlayerMovement movement;
     public BatteryConfig config;
-    public BatteryController bController;
     // Start is called before the first frame update
     void Start()
     {

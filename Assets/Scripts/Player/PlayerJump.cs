@@ -21,7 +21,7 @@ public class PlayerJump : MonoBehaviour, IJumpable
 
     public void Jump()
     {
-        if (jumpCount >= 1)
+        if (jumpCount >= 1 && isGrounded == true)
         {
             Prb.velocity = new Vector2(Prb.velocity.x, 0);
             Prb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
@@ -35,15 +35,35 @@ public class PlayerJump : MonoBehaviour, IJumpable
         if (collision.gameObject.CompareTag("Ground"))
         {
             jumpCount = 1;
+            jumpForce = 7f;
+            isGrounded = true;
+        }
+    }
+
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Drop"))
+        {
+            jumpCount = 1;
+            jumpForce = 8.5f;
             isGrounded = true;
         }
 
-        // Core は PlayerCoreInteraction 側で処理
     }
 
     void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
             isGrounded = false;
+    }
+
+    public void JumpForceRevert()
+    {
+        jumpForce = 7;
+    }
+
+    public void JumpForceUp(float x)
+    {
+        jumpForce += x;
     }
 }

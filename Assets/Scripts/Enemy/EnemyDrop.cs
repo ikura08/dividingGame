@@ -9,10 +9,13 @@ public class EnemyDrop : MonoBehaviour
     private Rigidbody2D enemyRB;
     private bool isDrop = false;
     private bool isDropping = false;
+    private Vector2 thisPosition;
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         enemyRB = GetComponent<Rigidbody2D>();
+        thisPosition = gameObject.transform.position;
     }
 
     // Update is called once per frame
@@ -37,6 +40,7 @@ public class EnemyDrop : MonoBehaviour
         {
             isDropping = false;
             Destroy(gameObject, 2f);
+            EnemyDropCreator.Instance.dropCreate(thisPosition);
         }
 
         if (collision.gameObject.CompareTag("Core"))
@@ -47,6 +51,7 @@ public class EnemyDrop : MonoBehaviour
         if (collision.gameObject.CompareTag("Player") && isDropping == true)
         {
             Destroy(gameObject);
+            EnemyDropCreator.Instance.dropCreate(thisPosition);
         }
 
         if (collision.gameObject.CompareTag("Bullet"))

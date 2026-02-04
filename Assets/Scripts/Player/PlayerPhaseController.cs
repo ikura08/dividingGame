@@ -9,13 +9,22 @@ public class PlayerPhaseController : MonoBehaviour
 
     int phase = 2;
     float timer = 0;
+    private bool isRetry = false;
+
+    void Start()
+    {
+        isRetry = false;
+    }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.R) && SceneManagerScr.Instance.isGameOver == false)
         {
-            if (SceneManagerScr.Instance.isGameOver == false)
+            if (isRetry == true) return;
+            else if (isRetry == false)
             {
+                Debug.Log("ゲーム中のリトライ");
+                isRetry = true;
                 // フェード制御を止める
                 phase = 2; 
                 timer = 0;

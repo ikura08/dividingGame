@@ -5,8 +5,8 @@ public class PlayerJump : MonoBehaviour, IJumpable
     public float jumpForce = 7f;
     public int jumpCount = 1;
     public bool isGrounded = false;
-
     Rigidbody2D Prb;
+    public AudioSource jumpSource;
 
     void Start()
     {
@@ -26,6 +26,7 @@ public class PlayerJump : MonoBehaviour, IJumpable
             Prb.velocity = new Vector2(Prb.velocity.x, 0);
             Prb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
             jumpCount--;
+            jumpSource.Play();
         }
     }
 

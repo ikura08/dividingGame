@@ -53,8 +53,9 @@ public class BatteryController : MonoBehaviour
             timer = 0;
         }
 
-        if (currentBattery <= 0)
+        if (currentBattery <= 0 && SceneManagerScr.Instance.isGameOver == false)
         {
+            Debug.Log("ゲームオーバー");
             SceneManagerScr.Instance.GameOver();
             currentBattery = 1;
         }

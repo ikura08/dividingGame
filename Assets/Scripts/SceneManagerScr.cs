@@ -9,17 +9,13 @@ public class SceneManagerScr : MonoBehaviour
 {
     [SerializeField]
     Image panel;
-    float currentAlpha = 0;
-    bool isBlacking = false;
-    Color panelColor;
-    float timer = 0f;
     public static SceneManagerScr Instance;
     private float fadeDuration = 1.0f;
-    public static int urasshnumber = 3;
     [SerializeField] private TMP_Text gameOverText;
     [SerializeField] private TMP_Text retryText;
-    [SerializeField] private float gameOverFadeDuration = 2.0f;
+    [SerializeField] private float gameOverFadeDuration = 1.1f;
     public bool isGameOver = false;
+    public bool isProcessing = false;
 
     private void Awake()
     {
@@ -47,14 +43,17 @@ public class SceneManagerScr : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R) && isGameOver == true)
+        if (Input.GetKeyDown(KeyCode.R) && isGameOver && !isProcessing)
         {
-            SceneManagerScr.Instance.Retry();
+            Debug.Log("ゲームオーバーの時のリトライ");
+            Instance.Retry();
         }
     }
 
     public void FadeAndLoad(string sceneName)
     {
+        if (isProcessing) return;
+        Debug.Log("リトライ中");
         StartCoroutine(FadeSceneChange(sceneName));
     }
 
@@ -108,7 +107,9 @@ public class SceneManagerScr : MonoBehaviour
 
     public void GameOver()
     {
+        // Debug.Log("ゲームオーバー");
         isGameOver = true;
+        // BatteryController.Instance.currentBattery = 10;
         StartCoroutine(GameOverSequence());
     }
     public IEnumerator GameOverSequence()
@@ -151,6 +152,7 @@ public class SceneManagerScr : MonoBehaviour
 
     public void Retry()
     {
+        if (isProcessing) return;
         StartCoroutine(RetrySequence());
     }
 
@@ -183,8 +185,8 @@ public class SceneManagerScr : MonoBehaviour
 
         // シーン再読み込み
         Scene current = SceneManager.GetActiveScene();
-        isGameOver = false;
         yield return SceneManager.LoadSceneAsync(current.name);
+        isGameOver = false;
 
         // Panel と GameOverText フェードアウト（明るく・文字消す）
         t = 0;

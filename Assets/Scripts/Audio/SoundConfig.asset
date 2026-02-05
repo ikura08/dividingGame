@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c45d161bf751b460eac05180e9ab5449, type: 3}
+  m_Name: SoundConfig
+  m_EditorClassIdentifier: 
+  dropClip: {fileID: 8300000, guid: c667d184b369648d58586b17391b0ff1, type: 3}
+  jumpPClip: {fileID: 8300000, guid: 41067f21a772c4d2cb1983047d9b7b65, type: 3}
+  jumpEClip: {fileID: 0}
+  jumpCClip: {fileID: 8300000, guid: 54c5e9adf77b24af5b573846174b47c3, type: 3}
+  chargeClip: {fileID: 8300000, guid: 3aaf301554ea149eab230dc3cc98804e, type: 3}
+  warpClip: {fileID: 0}
+  provideClip: {fileID: 0}
+  sceneClip: {fileID: 0}
+  bulletPClip: {fileID: 8300000, guid: 422bfc1bddb45403e8d228e53ae185a8, type: 3}
+  bulletEClip: {fileID: 8300000, guid: 77ac55a16303b487fb0ab1698cb43208, type: 3}
+  diePClip: {fileID: 0}
+  dieEClip: {fileID: 8300000, guid: 46521bac9fece4d338749bd42b2e3627, type: 3}
+  damagePClip: {fileID: 0}
+  coinClip: {fileID: 8300000, guid: 74490271c22f44936a3709369f298e5e, type: 3}
+  clearClip: {fileID: 0}

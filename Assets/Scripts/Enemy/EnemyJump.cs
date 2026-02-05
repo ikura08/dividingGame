@@ -10,6 +10,7 @@ public class EnemyJump : MonoBehaviour
     private float jumpForce = 7f;
     public bool isGround = true;
     Rigidbody2D rb;
+    public SoundConfig soundConfig;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();

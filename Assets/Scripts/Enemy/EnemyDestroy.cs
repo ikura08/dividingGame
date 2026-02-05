@@ -7,7 +7,7 @@ public class EnemyDestroy : MonoBehaviour
 {
     public ParticleSystem destroyParticle;
     public BatteryConfig config;
-
+    public SoundConfig soundConfig;
     // Start is called before the first frame update
     void Start()
     {

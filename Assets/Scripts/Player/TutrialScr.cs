@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-using TMPro;
+// using TMPro;
 
 public class TutrialScr : MonoBehaviour
 {

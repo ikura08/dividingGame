@@ -15,7 +15,7 @@ public class CoreWarp : MonoBehaviour, ITrigger, ICollection
     Vector3 originalScale;
     bool playerTouch = false;
     public float emergePlace = 1.5f;
-
+    public SoundConfig soundConfig;
     // Start is called before the first frame update
     void Start()
     {

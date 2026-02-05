@@ -5,6 +5,7 @@ using UnityEngine;
 public class CoreSelect : MonoBehaviour, ITrigger
 {
     public int stageNumber;
+    public SoundConfig soundConfig;
     public void CoreTrigger()
     {
         string sceneName = "Stage" + stageNumber;

@@ -19,7 +19,7 @@ public class CoreJump : MonoBehaviour, ITrigger, ICollection
     Vector2 velocity;
     Vector3 scale;
     Vector3 originalScale;
-    public AudioSource jumpCSource;
+    public SoundConfig soundConfig;
     // Start is called before the first frame update
     void Start()
     {
@@ -71,7 +71,7 @@ public class CoreJump : MonoBehaviour, ITrigger, ICollection
     {
         if (isGrounded == true)
         {
-            jumpCSource.Play();
+            AudioSource.PlayClipAtPoint(soundConfig.jumpCClip, transform.position);
             jumpCount = 1;
             if (jumpCount > 0)
             {

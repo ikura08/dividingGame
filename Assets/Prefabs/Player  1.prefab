@@ -207,7 +207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07e0fbb98d99b4895bf46814030dc153, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilityManager: {fileID: 1083134553026426034, guid: 66d7db2ea9116464aac442ce66f7ac4a, type: 3}
+  abilityManager: {fileID: 0}
 --- !u!114 &7465265239040070972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,7 +268,7 @@ MonoBehaviour:
   jumpForce: 7
   jumpCount: 1
   isGrounded: 0
-  jumpSource: {fileID: 6779481694966991472}
+  soundConfig: {fileID: 11400000, guid: 016877d5591394574923009a818376d1, type: 2}
 --- !u!114 &4552560457953226754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -330,7 +330,7 @@ MonoBehaviour:
   shotParticle: {fileID: 0}
   bullet: {fileID: 4599874190520140271, guid: c3c5e3960d3d24ef0a76edc79579b9ed, type: 3}
   config: {fileID: 11400000, guid: e36d9ba9944f64fd688888f5d84d331f, type: 2}
-  bulletSource: {fileID: 7355570232005246024}
+  soundConfig: {fileID: 11400000, guid: 016877d5591394574923009a818376d1, type: 2}
 --- !u!114 &1091356984247826889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -358,6 +358,7 @@ GameObject:
   - component: {fileID: 3621616910674684423}
   - component: {fileID: 1239401968675078068}
   - component: {fileID: 4189267910933515881}
+  - component: {fileID: 2553056794021021519}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -524,6 +525,18 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!114 &2553056794021021519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3755631625590204391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bd8bd2f7f58d47a0b7a730bb3e5fed9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7502522314137576585
 GameObject:
   m_ObjectHideFlags: 0
@@ -552,7 +565,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5035897, y: 1.2028718, z: 1.879487}
+  m_LocalScale: {x: 0.95702, y: 0.765616, z: 0.6131791}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7544358738245741124}
@@ -574,7 +587,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.16
   m_Color: {r: 0.3018868, g: 0.3018868, b: 0.3018868, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.5
   m_LightVolumeIntensity: 0.05
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -650,7 +663,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -2}
-  m_LocalScale: {x: 1.879487, y: 1.5035897, z: 1.879487}
+  m_LocalScale: {x: 1.244126, y: 0.99530077, z: 0.6131791}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7544358738245741124}
@@ -672,7 +685,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.16
   m_Color: {r: 0.3018868, g: 0.3018868, b: 0.3018868, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.5
   m_LightVolumeIntensity: 0.05
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -767,11 +780,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7141078190982645442, guid: e1eb1b3d69c8045a9aa35ba9641a1680, type: 3}
   m_PrefabInstance: {fileID: 4054844342014688026}
   m_PrefabAsset: {fileID: 0}
---- !u!82 &6779481694966991472 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 7372460608270954858, guid: e1eb1b3d69c8045a9aa35ba9641a1680, type: 3}
-  m_PrefabInstance: {fileID: 4054844342014688026}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5954107010822643050
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -832,10 +840,5 @@ PrefabInstance:
 --- !u!4 &2532701766950466029 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8179884998173207687, guid: ece5b3db2a64744debcccd221742d86f, type: 3}
-  m_PrefabInstance: {fileID: 5954107010822643050}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &7355570232005246024 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 3797942823796547874, guid: ece5b3db2a64744debcccd221742d86f, type: 3}
   m_PrefabInstance: {fileID: 5954107010822643050}
   m_PrefabAsset: {fileID: 0}

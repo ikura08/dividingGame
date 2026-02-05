@@ -14,7 +14,7 @@ public class CoreProvider : MonoBehaviour
     int count = 5;
     float distance;  //生成するメタルの距離
     public CoreGroup[] coreLists;
-
+    public SoundConfig soundConfig;
     // Start is called before the first frame update
     void Start()
     {

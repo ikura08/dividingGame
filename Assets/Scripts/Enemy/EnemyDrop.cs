@@ -10,6 +10,8 @@ public class EnemyDrop : MonoBehaviour
     private bool isDrop = false;
     private bool isDropping = false;
     private Vector2 thisPosition;
+    public BatteryConfig config;
+    public SoundConfig soundConfig;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,8 +52,11 @@ public class EnemyDrop : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player") && isDropping == true)
         {
-            Destroy(gameObject);
+            BatteryController.Instance.UseBattery(config.dropDamage);
+            DamageEffect.Instance.FlashRed();
+            AudioSource.PlayClipAtPoint(soundConfig.dropClip, transform.position);
             EnemyDropCreator.Instance.dropCreate(thisPosition);
+            Destroy(gameObject);
         }
 
         if (collision.gameObject.CompareTag("Bullet"))

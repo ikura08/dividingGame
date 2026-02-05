@@ -8,6 +8,7 @@ public class EnemyGunShot : MonoBehaviour
     public bool isGround = true;
     private float timer;
     public GameObject bullet;
+    public SoundConfig soundConfig;
     // Start is called before the first frame update
     void Start()
     {

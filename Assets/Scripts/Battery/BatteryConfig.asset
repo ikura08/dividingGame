@@ -14,10 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   batteryPickupRecover: 35
   enemybatteryRecover: 35
+  seondCost: 3
   bulletCost: 5
   coreBatteryCost: 20
   enemyContactDamage: 7
   enemyBulletDamage: 15
   moveBatteryCost: 0
+  dropDamage: 20
+  lightAttackCost: 10
   maxBatteryPerUnit: 100
   batteryCount: 3

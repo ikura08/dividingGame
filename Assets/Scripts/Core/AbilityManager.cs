@@ -30,8 +30,7 @@ public class AbilityManager : MonoBehaviour
     public float spaceDuration = 0f;
     public BatteryConfig config;
     public BatteryController bController;
-
-    public AudioSource chargeSource;
+    public SoundConfig soundConfig;
     // Start is called before the first frame update
     void Start()
     {
@@ -53,7 +52,7 @@ public class AbilityManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             spaceDuration = 0;
-            chargeSource.Play();
+            AudioSource.PlayClipAtPoint(soundConfig.chargeClip, transform.position);
         }
 
         if (Input.GetKey(KeyCode.Space))

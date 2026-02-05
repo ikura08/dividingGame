@@ -10,7 +10,7 @@ public class PlayerGunshot : MonoBehaviour
     public GameObject bullet;
     PlayerMovement movement;
     public BatteryConfig config;
-    public AudioSource bulletSource;
+    public SoundConfig soundConfig;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +34,6 @@ public class PlayerGunshot : MonoBehaviour
         rb.AddForce(movement.lastDirection * 7f, ForceMode2D.Impulse);
 
         BatteryController.Instance.UseBattery(config.bulletCost);
-        bulletSource.Play();
+        AudioSource.PlayClipAtPoint(soundConfig.bulletPClip, transform.position);
     }
 }

@@ -7,8 +7,10 @@ public class EnemyGunShot : MonoBehaviour
 {
     public bool isGround = true;
     private float timer;
-    public GameObject bullet;
+    public GameObject bulletL;
+    public GameObject bulletR;
     public SoundConfig soundConfig;
+    public AudioSource bulletESource;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +24,7 @@ public class EnemyGunShot : MonoBehaviour
 
         if (timer >= 0.7f && isGround == true)
         {
+            bulletESource.Play();
             ShootLeft();
             ShootRight();
             timer = 0;
@@ -30,13 +33,13 @@ public class EnemyGunShot : MonoBehaviour
 
     void ShootLeft()
     {
-        GameObject b = Instantiate(bullet, transform.position, Quaternion.identity);
+        GameObject b = Instantiate(bulletL, transform.position, Quaternion.identity);
         Rigidbody2D rb = b.GetComponent<Rigidbody2D>();
         rb.AddForce(Vector2.left * 6.7f, ForceMode2D.Impulse);
     }
     void ShootRight()
     {
-        GameObject b = Instantiate(bullet, transform.position, Quaternion.identity);
+        GameObject b = Instantiate(bulletR, transform.position, Quaternion.identity);
         Rigidbody2D rb = b.GetComponent<Rigidbody2D>();
         rb.AddForce(Vector2.right * 6.7f, ForceMode2D.Impulse);
     }

@@ -8,6 +8,7 @@ public class CoreSelect : MonoBehaviour, ITrigger
     public SoundConfig soundConfig;
     public void CoreTrigger()
     {
+        AudioSource.PlayClipAtPoint(soundConfig.sceneClip, transform.position);
         string sceneName = "Stage" + stageNumber;
         // SceneManager.LoadScene(sceneName);
         SceneManagerScr.Instance.FadeAndLoad(sceneName);

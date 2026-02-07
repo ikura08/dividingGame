@@ -25,8 +25,8 @@ public class AudioController : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        cutoffs[0] = 500f;
-        cutoffs[1] = 10000f;
+        cutoffs[0] = 9000f;
+        cutoffs[1] = 15000f;
         cutoffs[2] = 22000f;
     }
 
@@ -74,5 +74,31 @@ public class AudioController : MonoBehaviour
 
         // 3. 最後に値を確実に固定する
         mainMixer.SetFloat(cutoffParam, targetValue);
+    }
+
+    public void FadeOutBGM(float duration)
+    {
+        if (reBGMCoroutine != null) 
+        {
+            StopCoroutine(reBGMCoroutine);
+        }
+        // 音量の方をフェードアウトさせるコルーチンを開始
+        StartCoroutine(FadeOutCoroutine(duration));
+    }
+
+    IEnumerator FadeOutCoroutine(float duration)
+    {
+        float startVolume = bgmSource.volume;
+        float time = 0f;
+
+        while (time < duration)
+        {
+            time += Time.deltaTime;
+            bgmSource.volume = Mathf.Lerp(startVolume, 0, time / duration);
+            yield return null;
+        }
+
+        bgmSource.volume = 0;
+        bgmSource.Stop(); // 完全に消えたら停止
     }
 }

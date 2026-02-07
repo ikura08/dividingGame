@@ -19,9 +19,10 @@ public class LightController : MonoBehaviour
 
     void Awake() // StartからAwakeに変更
     {
+        // サイズの定義
         lightSizes[0] = new Vector3(1.1f, 0.88f, 1f);
         lightSizes[1] = new Vector3(1.5f, 1.2f, 1f);
-        lightSizes[2] = new Vector3(2.0f, 1.6f, 1f);
+        lightSizes[2] = new Vector3(1.9f, 1.52f, 1f);
 
         // 開始時は強制的に最大サイズ（Level 2）にする
         Vector3 startSize = lightSizes[2];

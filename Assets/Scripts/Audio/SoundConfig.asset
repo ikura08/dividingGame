@@ -17,13 +17,13 @@ MonoBehaviour:
   jumpEClip: {fileID: 0}
   jumpCClip: {fileID: 8300000, guid: 54c5e9adf77b24af5b573846174b47c3, type: 3}
   chargeClip: {fileID: 8300000, guid: 3aaf301554ea149eab230dc3cc98804e, type: 3}
-  warpClip: {fileID: 0}
-  provideClip: {fileID: 0}
-  sceneClip: {fileID: 0}
+  warpClip: {fileID: 8300000, guid: 5a71b0a28d83d494488502c82972c24b, type: 3}
+  provideClip: {fileID: 8300000, guid: 46521bac9fece4d338749bd42b2e3627, type: 3}
+  sceneClip: {fileID: 8300000, guid: 48a44d7070aca4b4f8d394de20c302b9, type: 3}
   bulletPClip: {fileID: 8300000, guid: 422bfc1bddb45403e8d228e53ae185a8, type: 3}
   bulletEClip: {fileID: 8300000, guid: 77ac55a16303b487fb0ab1698cb43208, type: 3}
-  diePClip: {fileID: 0}
-  dieEClip: {fileID: 8300000, guid: 46521bac9fece4d338749bd42b2e3627, type: 3}
-  damagePClip: {fileID: 0}
+  diePClip: {fileID: 8300000, guid: ddbdd0e9b911c4d86a28f2561b301c1b, type: 3}
+  dieEClip: {fileID: 8300000, guid: 59ee436071f374953b7cdb518b8dc857, type: 3}
+  damagePClip: {fileID: 8300000, guid: 78de510e682f6467d94c02e89ef549b5, type: 3}
   coinClip: {fileID: 8300000, guid: 74490271c22f44936a3709369f298e5e, type: 3}
   clearClip: {fileID: 0}

@@ -344,6 +344,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   config: {fileID: 11400000, guid: e36d9ba9944f64fd688888f5d84d331f, type: 2}
+  soundConfig: {fileID: 11400000, guid: 016877d5591394574923009a818376d1, type: 2}
 --- !u!1 &3755631625590204391
 GameObject:
   m_ObjectHideFlags: 0

@@ -326,7 +326,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3, y: -1.51, z: -0.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.95, y: 0.95, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3629663268391739984}
@@ -402,30 +402,30 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 4795799190761415831}
     m_ColliderPaths:
-    - - X: 5000000
-        Y: 5000000
-      - X: -5000000
-        Y: 5000000
-      - X: -5000000
-        Y: -5000000
-      - X: 5000000
-        Y: -5000000
+    - - X: 4750000
+        Y: 4750000
+      - X: -4750000
+        Y: 4750000
+      - X: -4750000
+        Y: -4750000
+      - X: 4750000
+        Y: -4750000
   - m_Collider: {fileID: 5004705627862711517}
     m_ColliderPaths:
-    - - X: 4800000
-        Y: 4800000
-      - X: -4800000
-        Y: 4800000
-      - X: -4800000
-        Y: -4800000
-      - X: 4800000
-        Y: -4800000
+    - - X: 4559999
+        Y: 4559999
+      - X: -4559999
+        Y: 4559999
+      - X: -4559999
+        Y: -4559999
+      - X: 4559999
+        Y: -4559999
   m_CompositePaths:
     m_Paths:
-    - - {x: 0.4999707, y: -0.5}
-      - {x: 0.4999707, y: 0.5}
-      - {x: -0.5, y: 0.4999707}
-      - {x: -0.4999707, y: -0.5}
+    - - {x: 0.4749707, y: -0.475}
+      - {x: 0.4749707, y: 0.475}
+      - {x: -0.475, y: 0.4749707}
+      - {x: -0.4749707, y: -0.475}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
@@ -462,7 +462,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.08543444, y: 0.4622213}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -473,7 +473,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.8291311, y: 0.07555741}
   m_EdgeRadius: 0
 --- !u!114 &2843816063953917285
 MonoBehaviour:
@@ -489,7 +489,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carryBoost: 1.5
   distance: 0
-  jumpCSource: {fileID: 2628509125793669123}
+  soundConfig: {fileID: 11400000, guid: 016877d5591394574923009a818376d1, type: 2}
 --- !u!1 &8336802227673381793
 GameObject:
   m_ObjectHideFlags: 0
@@ -680,10 +680,5 @@ PrefabInstance:
 --- !u!4 &2353583128780994134 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 278499209625136805, guid: 35f3a1af640944997aeae5ca4db89359, type: 3}
-  m_PrefabInstance: {fileID: 2554938386388949235}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &2628509125793669123 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 508521874673957104, guid: 35f3a1af640944997aeae5ca4db89359, type: 3}
   m_PrefabInstance: {fileID: 2554938386388949235}
   m_PrefabAsset: {fileID: 0}

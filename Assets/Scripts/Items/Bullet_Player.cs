@@ -8,6 +8,7 @@ public class Bullet_Player : MonoBehaviour
 
     float lifeTime = 0.7f;
     bool isDead = false;
+    public SoundConfig soundConfig;
     
     void Start()
     {
@@ -21,6 +22,7 @@ public class Bullet_Player : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Enemy"))
         {
+            AudioSource.PlayClipAtPoint(soundConfig.dieEClip, transform.position);
             ExplodeEnemy();
         }
         else

@@ -738,6 +738,9 @@ MonoBehaviour:
   - {fileID: 5749584696023798283}
   config: {fileID: 11400000, guid: e36d9ba9944f64fd688888f5d84d331f, type: 2}
   currentBattery: 0
+  batteryLevel: 0
+  lightController: {fileID: 0}
+  soundConfig: {fileID: 11400000, guid: 016877d5591394574923009a818376d1, type: 2}
 --- !u!1 &7490704336272956702
 GameObject:
   m_ObjectHideFlags: 0

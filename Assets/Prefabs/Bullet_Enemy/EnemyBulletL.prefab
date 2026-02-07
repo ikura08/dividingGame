@@ -355,7 +355,7 @@ GameObject:
   - component: {fileID: 2138420297655272075}
   - component: {fileID: -2883642372033251553}
   m_Layer: 9
-  m_Name: EnemyBullet
+  m_Name: EnemyBulletL
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -515,6 +515,7 @@ MonoBehaviour:
   onWallExplosionParticle: {fileID: 8748415794333560789, guid: 4f5daf98e96ee489da868b3ee40c7060, type: 3}
   failedExplosionParticle: {fileID: 1467048438450755906, guid: 1e03a71257844434d904daaab9ced262, type: 3}
   config: {fileID: 11400000, guid: e36d9ba9944f64fd688888f5d84d331f, type: 2}
+  soundConfig: {fileID: 11400000, guid: 016877d5591394574923009a818376d1, type: 2}
 --- !u!1 &6598942948191381292
 GameObject:
   m_ObjectHideFlags: 0

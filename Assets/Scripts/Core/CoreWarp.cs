@@ -49,6 +49,7 @@ public class CoreWarp : MonoBehaviour, ITrigger, ICollection
     {
         if (playerTouch == true)
         {
+            AudioSource.PlayClipAtPoint(soundConfig.warpClip, transform.position);
             warpVector = new Vector2(pairObject.transform.position.x, pairObject.transform.position.y + emergePlace);
             playerObject.transform.position = warpVector;
         }

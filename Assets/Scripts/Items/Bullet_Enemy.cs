@@ -6,6 +6,7 @@ public class Bullet_Enemy : MonoBehaviour
     public ParticleSystem onWallExplosionParticle;
     public ParticleSystem failedExplosionParticle;
     public BatteryConfig config;
+    public SoundConfig soundConfig;
 
     float lifeTime = 0.6f;
     bool isDead = false;
@@ -21,6 +22,7 @@ public class Bullet_Enemy : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player"))
         {
+            AudioSource.PlayClipAtPoint(soundConfig.damagePClip, transform.position);
             BatteryController.Instance.UseBattery(config.enemyBulletDamage);
 
             if (CameraShake.Instance != null)

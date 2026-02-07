@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class BatteryController : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class BatteryController : MonoBehaviour
     public int batteryLevel = 0;
     [SerializeField]
     LightController lightController;
+    public  SoundConfig soundConfig;
 
     void Awake()
     {
@@ -55,7 +57,7 @@ public class BatteryController : MonoBehaviour
 
         if (currentBattery <= 0 && SceneManagerScr.Instance.isGameOver == false)
         {
-            Debug.Log("ゲームオーバー");
+            AudioController.Instance.FadeOutBGM(0.8f);
             SceneManagerScr.Instance.GameOver();
             currentBattery = 1;
         }

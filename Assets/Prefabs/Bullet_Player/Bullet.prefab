@@ -164,3 +164,4 @@ MonoBehaviour:
   explosionParticle: {fileID: 4854216961989140813, guid: 3f3d38a603ca848ceb167828a25e1ad8, type: 3}
   onWallExplosionParticle: {fileID: 3958663511975210790, guid: 6251ff0a63eba41a0bca590392ebdc67, type: 3}
   failedExplosionParticle: {fileID: 830244815965932086, guid: 7f291cb46374a45d7a94bb564caef8e2, type: 3}
+  soundConfig: {fileID: 11400000, guid: 016877d5591394574923009a818376d1, type: 2}

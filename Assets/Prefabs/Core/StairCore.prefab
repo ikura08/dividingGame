@@ -326,7 +326,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 19.49, y: 7.1, z: -0.5}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2896246191270862697}
@@ -401,30 +401,30 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 942207485567245867}
     m_ColliderPaths:
-    - - X: 5500000
-        Y: 5500000
-      - X: -5500000
-        Y: 5500000
-      - X: -5500000
-        Y: -5500000
-      - X: 5500000
-        Y: -5500000
+    - - X: 5000000
+        Y: 5000000
+      - X: -5000000
+        Y: 5000000
+      - X: -5000000
+        Y: -5000000
+      - X: 5000000
+        Y: -5000000
   - m_Collider: {fileID: 242898272121733560}
     m_ColliderPaths:
-    - - X: 5280000
-        Y: 5280000
-      - X: -5280000
-        Y: 5280000
-      - X: -5280000
-        Y: -5280000
-      - X: 5280000
-        Y: -5280000
+    - - X: 4800000
+        Y: 4800000
+      - X: -4800000
+        Y: 4800000
+      - X: -4800000
+        Y: -4800000
+      - X: 4800000
+        Y: -4800000
   m_CompositePaths:
     m_Paths:
-    - - {x: 0.5499707, y: -0.55}
-      - {x: 0.5499707, y: 0.55}
-      - {x: -0.55, y: 0.5499707}
-      - {x: -0.5499707, y: -0.55}
+    - - {x: 0.4999707, y: -0.5}
+      - {x: 0.4999707, y: 0.5}
+      - {x: -0.5, y: 0.4999707}
+      - {x: -0.4999707, y: -0.5}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
@@ -488,8 +488,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   provider: {fileID: 0}
   playerTransform: {fileID: 0}
-  thisCoreNumber: 0
+  thisCoreNumber: 1
   isCreating: 0
+  soundConfig: {fileID: 11400000, guid: 016877d5591394574923009a818376d1, type: 2}
 --- !u!1 &6238800191243647943
 GameObject:
   m_ObjectHideFlags: 0

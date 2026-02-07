@@ -16,6 +16,7 @@ public class SceneManagerScr : MonoBehaviour
     [SerializeField] private float gameOverFadeDuration = 1.1f;
     public bool isGameOver = false;
     public bool isProcessing = false;
+    public SoundConfig soundConfig;
 
     private void Awake()
     {
@@ -107,11 +108,18 @@ public class SceneManagerScr : MonoBehaviour
 
     public void GameOver()
     {
-        // Debug.Log("ゲームオーバー");
         isGameOver = true;
         // BatteryController.Instance.currentBattery = 10;
         StartCoroutine(GameOverSequence());
+        StartCoroutine(DelayedGameoverClip(0.5f));
     }
+
+    IEnumerator DelayedGameoverClip(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        AudioSource.PlayClipAtPoint(soundConfig.diePClip, Camera.main.transform.position, 0.7f);
+    }
+
     public IEnumerator GameOverSequence()
     {
         // Retryテキストは非表示

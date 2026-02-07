@@ -29,6 +29,7 @@ public class CoreProvider : MonoBehaviour
 
     public IEnumerator ProvidingX(Vector3 size, int number)
     {
+        AudioSource.PlayClipAtPoint(soundConfig.provideClip, transform.position);
         distance = size.x;
         point = new Vector3(point.x + distance, point.y, -0.5f);
         corePrefab.transform.localScale = size;
@@ -39,6 +40,7 @@ public class CoreProvider : MonoBehaviour
 
     public IEnumerator ProvidingY(Vector3 size, int number)
     {
+        AudioSource.PlayClipAtPoint(soundConfig.provideClip, transform.position);
         distance = size.y;
         point = new Vector3(point.x, point.y + distance, -0.5f);
         corePrefab.transform.localScale = size;

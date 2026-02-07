@@ -3,11 +3,13 @@ using UnityEngine;
 public class PlayerEnemyDamage : MonoBehaviour
 {
     public BatteryConfig config;
+    public SoundConfig soundConfig;
 
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
+            AudioSource.PlayClipAtPoint(soundConfig.damagePClip, transform.position);
             BatteryController.Instance.UseBattery(config.enemyContactDamage);
 
             if (CameraShake.Instance != null)

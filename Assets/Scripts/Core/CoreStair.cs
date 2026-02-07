@@ -14,6 +14,7 @@ public class CoreStair : MonoBehaviour, ITrigger, ICollection
     Vector3 originalScale;
     public int thisCoreNumber;
     public bool isCreating = false;
+    public SoundConfig soundConfig;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,21 +44,27 @@ public class CoreStair : MonoBehaviour, ITrigger, ICollection
 
     private IEnumerator Sequence()
     {
+        AudioSource.PlayClipAtPoint(soundConfig.provideClip, transform.position, 0.6f);
         StartCoroutine(provider.ProvidingX(originalScale, thisCoreNumber));
         yield return new WaitForSeconds(0.2f);
 
+        AudioSource.PlayClipAtPoint(soundConfig.provideClip, transform.position, 0.6f);
         StartCoroutine(provider.ProvidingY(originalScale, thisCoreNumber));
         yield return new WaitForSeconds(0.2f);
 
+        AudioSource.PlayClipAtPoint(soundConfig.provideClip, transform.position, 0.6f);
         StartCoroutine(provider.ProvidingX(originalScale, thisCoreNumber));
         yield return new WaitForSeconds(0.2f);
 
+        AudioSource.PlayClipAtPoint(soundConfig.provideClip, transform.position, 0.6f);
         StartCoroutine(provider.ProvidingY(originalScale, thisCoreNumber));
         yield return new WaitForSeconds(0.2f);
 
+        AudioSource.PlayClipAtPoint(soundConfig.provideClip, transform.position, 0.6f);
         StartCoroutine(provider.ProvidingX(originalScale, thisCoreNumber));
         yield return new WaitForSeconds(2.0f);
 
+        AudioSource.PlayClipAtPoint(soundConfig.provideClip, transform.position, 0.6f);
         // provider.DestroyAllCores(thisCoreNumber);
         StartCoroutine(provider.Blinking(thisCoreNumber));
         isCreating = false;

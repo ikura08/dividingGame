@@ -185,7 +185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   config: {fileID: 11400000, guid: e36d9ba9944f64fd688888f5d84d331f, type: 2}
-  dropSource: {fileID: 4702953437405953323}
+  soundConfig: {fileID: 11400000, guid: 016877d5591394574923009a818376d1, type: 2}
 --- !u!1001 &3518322397288998690
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -246,10 +246,5 @@ PrefabInstance:
 --- !u!4 &1362899083328026387 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2466401301774127153, guid: aac1560d8eebc4e2682158e94b9d589a, type: 3}
-  m_PrefabInstance: {fileID: 3518322397288998690}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &4702953437405953323 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 8185196320302995977, guid: aac1560d8eebc4e2682158e94b9d589a, type: 3}
   m_PrefabInstance: {fileID: 3518322397288998690}
   m_PrefabAsset: {fileID: 0}

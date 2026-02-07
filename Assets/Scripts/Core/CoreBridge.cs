@@ -12,6 +12,7 @@ public class CoreBridge : MonoBehaviour, ITrigger, ICollection
     Vector3 originalScale;
     public int thisCoreNumber;
     private bool isCreating = false; //スペース連打のバグ修正
+    public SoundConfig soundConfig;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +43,7 @@ public class CoreBridge : MonoBehaviour, ITrigger, ICollection
 
         for (int i = 0; i < 5; i++)
         {
+            AudioSource.PlayClipAtPoint(soundConfig.provideClip, transform.position, 0.6f);
             yield return new WaitForSeconds(0.2f);
             StartCoroutine(provider.ProvidingX(originalScale, thisCoreNumber));
         }

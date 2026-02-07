@@ -34,10 +34,10 @@ public class AbilityManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        movable = selectObject.GetComponent<IMovable>();
-        jumpable = selectObject.GetComponent<IJumpable>();
-        trigger = coreObject.GetComponent<ITrigger>();
-        selectRenderer = selectObject.GetComponent<Renderer>();
+        // movable = selectObject.GetComponent<IMovable>();
+        // jumpable = selectObject.GetComponent<IJumpable>();
+        // trigger = coreObject.GetComponent<ITrigger>();
+        // selectRenderer = selectObject.GetComponent<Renderer>();
         iconChangeScr = FindObjectOfType<IconChange>();
 
         playerMoveScr = FindObjectOfType<PlayerMovement>();

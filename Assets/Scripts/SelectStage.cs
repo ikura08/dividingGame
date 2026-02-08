@@ -14,6 +14,7 @@ public class SelectStage : MonoBehaviour
     public GameObject[] newSigns;
     public static int nextStage =2;
     public static int clearCount = nextStage -1;
+    public GameObject[] star;
     // Start is called before the first frame update
     void Start()
     {
@@ -63,6 +64,14 @@ public class SelectStage : MonoBehaviour
         {
             movingLight[nextStage - 1].SetActive(true);
             newSigns[nextStage - 1].SetActive(true);
+        }
+
+        for (int i = 0; i < clearCount; i++)
+        {
+            if (CoinData.isStageCoinGet[i])
+            {
+                star[i].SetActive(true);
+            }
         }
     }
 

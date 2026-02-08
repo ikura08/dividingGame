@@ -11,6 +11,7 @@ public class EnemyJump : MonoBehaviour
     public bool isGround = true;
     Rigidbody2D rb;
     public SoundConfig soundConfig;
+    public bool isUpsideDown;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -21,24 +22,39 @@ public class EnemyJump : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (timer >= jumpInterval && jumpCount == 2)
+        if (isUpsideDown)
         {
-            timer = 0f;
-            jumpCount = 1;
-            Jump();
+            // --- 天井にいる場合：1回ジャンプを繰り返す ---
+            if (timer >= jumpInterval && isGround)
+            {
+                Jump();
+                timer = 0f;
+            }
         }
-
-        if (timer >= 0.1f && isGround == true && jumpCount == 1)
+        else
         {
-            Jump();
-            timer = 0f;
-            jumpCount = 2;
+            if (timer >= jumpInterval && jumpCount == 2)
+            {
+                timer = 0f;
+                jumpCount = 1;
+                Jump();
+            }
+
+            if (timer >= 0.1f && isGround == true && jumpCount == 1)
+            {
+                Jump();
+                timer = 0f;
+                jumpCount = 2;
+            }
         }
     }
 
     void Jump()
     {
-        rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        if (!isUpsideDown)
+            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        else if (isUpsideDown)
+            rb.AddForce(Vector2.down * jumpForce, ForceMode2D.Impulse);
     }
 
     void OnCollisionEnter2D(Collision2D collision)

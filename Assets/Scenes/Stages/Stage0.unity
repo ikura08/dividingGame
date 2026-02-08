@@ -453,7 +453,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &430135479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -877,6 +877,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &975256437 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3376866197767491950, guid: 8ecedbff4bacc4fdeb5acd0a7b63b4e2, type: 3}
+  m_PrefabInstance: {fileID: 431696737}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1229615095
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -933,6 +944,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7266299120747743531, guid: 202dc239cca194e6aaa133e2e004b79c, type: 3}
+      propertyPath: star
+      value: 
+      objectReference: {fileID: 975256437}
+    - target: {fileID: 7266299120747743531, guid: 202dc239cca194e6aaa133e2e004b79c, type: 3}
+      propertyPath: flame
+      value: 
+      objectReference: {fileID: 1870485497}
     - target: {fileID: 7266299120747743531, guid: 202dc239cca194e6aaa133e2e004b79c, type: 3}
       propertyPath: clearText
       value: 
@@ -24731,6 +24750,17 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1870485497 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 436453705580843997, guid: 8ecedbff4bacc4fdeb5acd0a7b63b4e2, type: 3}
+  m_PrefabInstance: {fileID: 431696737}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1897694178
 PrefabInstance:
   m_ObjectHideFlags: 0

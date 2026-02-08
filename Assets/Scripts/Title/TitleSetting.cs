@@ -56,7 +56,7 @@ public class TitleSetting : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            SceneManagerScr.Instance.FadeAndLoad("Tutrial");
+            SceneManagerScr.Instance.FadeAndLoad("Stage0");
         }
     }
 

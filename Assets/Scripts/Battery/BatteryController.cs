@@ -55,9 +55,9 @@ public class BatteryController : MonoBehaviour
             timer = 0;
         }
 
-        if (currentBattery <= 0 && SceneManagerScr.Instance.isGameOver == false)
+        if (currentBattery <= 0 && SceneManagerScr.Instance.isGameOver == false && !GoalManager.Instance.isCleared)
         {
-            AudioController.Instance.FadeOutBGM(0.8f);
+            AudioController.Instance.FadeOutBGM(0.6f);
             SceneManagerScr.Instance.GameOver();
             currentBattery = 1;
         }

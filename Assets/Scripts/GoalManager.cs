@@ -6,19 +6,25 @@ using UnityEngine.SceneManagement;
 using UnityEditor;
 using TMPro;
 using Unity.VisualScripting;
+// using UnityEditor.SceneManagement;
 
 public class GoalManager : MonoBehaviour
 {
-    private bool isCleared = false;
+    public static GoalManager Instance;
+    public bool isCleared = false;
     public TMP_Text clearText;
     public TMP_Text clickText;
     float fadeSpeed = 1f;
     bool canTap = false;
     public GameObject clearEffectPrefab;
+    public Image star;
+    public Image flame;
+    public int stageNumber;
     // Start is called before the first frame update
     void Start()
     {
-
+        star.enabled = false;
+        flame.enabled = false;
     }
 
     // Update is called once per frame
@@ -26,6 +32,7 @@ public class GoalManager : MonoBehaviour
     {
         if (canTap == true && Input.GetMouseButtonDown(0))
         {
+            Time.timeScale = 1.0f;
             Scene current = SceneManager.GetActiveScene();
             SceneManagerScr.Instance.FadeAndLoad("Select");
         }
@@ -33,8 +40,9 @@ public class GoalManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player") && isCleared == false)
+        if (other.gameObject.CompareTag("Player") && !isCleared && !SceneManagerScr.Instance.isGameOver)
         {
+            Time.timeScale = 0f;
             SelectStage.clearCount += 1;
             SelectStage.nextStage += 1;
             GameObject effect = Instantiate(clearEffectPrefab, transform.position, Quaternion.identity);
@@ -50,11 +58,37 @@ public class GoalManager : MonoBehaviour
         float a = 0.0f;
         while (a < 1.0f)
         {
-            a += Time.deltaTime * fadeSpeed;
+            a += Time.unscaledDeltaTime * fadeSpeed;
             c.a = a;
             clearText.color = c;
             yield return null;
         }
+
+        bool hasCoin = false;
+        if (stageNumber > 0)
+        {
+            hasCoin = CoinData.isStageCoinGet[stageNumber - 1];
+            // switch (stageNumber)
+            // {
+            //     case 1: hasCoin = CoinData.isStage1CoinGet; break;
+            //     case 2: hasCoin = CoinData.isStage2CoinGet; break;
+            //     case 3: hasCoin = CoinData.isStage3CoinGet; break;
+            // }
+            
+            yield return new WaitForSecondsRealtime(0.5f);
+
+            if (hasCoin)
+            {
+                flame.enabled = true;
+                star.enabled = true;
+            }
+            else
+            {
+                flame.enabled = true;
+            }
+        }
+        
+        yield return new WaitForSecondsRealtime(0.5f);
         
         Color c2 = clickText.color;
         c2.a = 1.0f;

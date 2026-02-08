@@ -77,59 +77,59 @@ public class AbilityManager : MonoBehaviour
             // jumpable.Jump();
         }
         //コア回収時のマウス長押し
-        if (Input.GetMouseButton(0))
-        {
-            // ① ScreenToWorldPoint で Z をカメラ距離に合わせる
-            Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(
-                new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z)
-            );
+        // if (Input.GetMouseButton(0))
+        // {
+        //     // ① ScreenToWorldPoint で Z をカメラ距離に合わせる
+        //     Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(
+        //         new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z)
+        //     );
 
-            // ② XY だけを取り出して 2D に変換
-            Vector2 pos = new Vector2(mouseWorldPos.x, mouseWorldPos.y);
+        //     // ② XY だけを取り出して 2D に変換
+        //     Vector2 pos = new Vector2(mouseWorldPos.x, mouseWorldPos.y);
 
-            // ③ OverlapPoint で判定
-            Collider2D hit = Physics2D.OverlapPoint(pos);
+        //     // ③ OverlapPoint で判定
+        //     Collider2D hit = Physics2D.OverlapPoint(pos);
 
-            // ④ デバッグ用ログ（必要なら）
-            if (hit == null)
-                Debug.Log("何も当たらない");
-            else
-                Debug.Log("当たったオブジェクト: " + hit.name + " (Z=" + hit.transform.position.z + ")");
+        //     // ④ デバッグ用ログ（必要なら）
+        //     if (hit == null)
+        //         Debug.Log("何も当たらない");
+        //     else
+        //         Debug.Log("当たったオブジェクト: " + hit.name + " (Z=" + hit.transform.position.z + ")");
 
-            if (hit != null && hit.CompareTag("Core"))
-            {
+        //     if (hit != null && hit.CompareTag("Core"))
+        //     {
 
-                Debug.Log("coreを長押しした！1");
-                if (target == hit.gameObject)
-                {
-                    Debug.Log("coreを長押しした！2");
-                    holdTime += Time.deltaTime;
-                    if (holdTime >= 1f)
-                    {
-                        collection = hit.GetComponent<ICollection>();
-                        collection.CoreCollection();
-                        Debug.Log("coreを長押しした！");
-                        // ここに実行したい処理を書く
-                        holdTime = 0f; // 一度実行したらリセット
-                    }
-                }
-                else
-                {
-                    target = hit.gameObject;
-                    holdTime = 0f;
-                }
-            }
-            else
-            {
-                target = null;
-                holdTime = 0f;
-            }
-        }
-        else
-        {
-            target = null;
-            holdTime = 0f;
-        }
+        //         Debug.Log("coreを長押しした！1");
+        //         if (target == hit.gameObject)
+        //         {
+        //             Debug.Log("coreを長押しした！2");
+        //             holdTime += Time.deltaTime;
+        //             if (holdTime >= 1f)
+        //             {
+        //                 collection = hit.GetComponent<ICollection>();
+        //                 collection.CoreCollection();
+        //                 Debug.Log("coreを長押しした！");
+        //                 // ここに実行したい処理を書く
+        //                 holdTime = 0f; // 一度実行したらリセット
+        //             }
+        //         }
+        //         else
+        //         {
+        //             target = hit.gameObject;
+        //             holdTime = 0f;
+        //         }
+        //     }
+        //     else
+        //     {
+        //         target = null;
+        //         holdTime = 0f;
+        //     }
+        // }
+        // else
+        // {
+        //     target = null;
+        //     holdTime = 0f;
+        // }
 
     } //Updateの終わり
 

@@ -20,7 +20,6 @@ public class AbilityManager : MonoBehaviour
     ICollection collection;
     Renderer selectRenderer;
     Rigidbody2D selectRb;
-    IconChange iconChangeScr;
     PlayerMovement playerMoveScr;
     IMovable selectMovable;  //タップしたオブジェクトのmovable
     [SerializeField]
@@ -38,8 +37,6 @@ public class AbilityManager : MonoBehaviour
         // jumpable = selectObject.GetComponent<IJumpable>();
         // trigger = coreObject.GetComponent<ITrigger>();
         // selectRenderer = selectObject.GetComponent<Renderer>();
-        iconChangeScr = FindObjectOfType<IconChange>();
-
         playerMoveScr = FindObjectOfType<PlayerMovement>();
         selectMovable = playerObject.GetComponent<IMovable>();
 

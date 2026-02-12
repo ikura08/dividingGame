@@ -9,14 +9,19 @@ public class BatteryController : MonoBehaviour
 
     [Header("UI")]
     public Slider[] sliders;
+    private Image[] fillImages; // ★自動取得用
     public BatteryConfig config;
     public int currentBattery;
     private int totalMaxBattery;
     private float timer = 0;
-    public int batteryLevel = 0;
-    [SerializeField]
-    LightController lightController;
-    public  SoundConfig soundConfig;
+    
+    [SerializeField] LightController lightController;
+    public SoundConfig soundConfig;
+    
+    [Header("Damage Effect")]
+    public Color normalColor = Color.white;
+    public Color damageColor = Color.red;
+    public float recoverSpeed = 2f;
 
     void Awake()
     {
@@ -28,11 +33,13 @@ public class BatteryController : MonoBehaviour
         totalMaxBattery = config.maxBatteryPerUnit * config.batteryCount;
         currentBattery = totalMaxBattery - 1;
 
-        // batteryLevel = sliders.Length;
-
+        // ★ 各スライダーから Fill Image を自動取得
+        fillImages = new Image[sliders.Length];
         for (int i = 0; i < sliders.Length; i++)
         {
             sliders[i].maxValue = config.maxBatteryPerUnit;
+            // スライダーの構造（Fill Area > Fill）からImageを取得
+            fillImages[i] = sliders[i].fillRect.GetComponent<Image>();
 
             if (i < config.batteryCount)
             {
@@ -41,7 +48,7 @@ public class BatteryController : MonoBehaviour
             }
             else
             {
-                sliders[i].gameObject.SetActive(false); // 使わない分は非表示
+                sliders[i].gameObject.SetActive(false);
             }
         }
     }
@@ -55,7 +62,8 @@ public class BatteryController : MonoBehaviour
             timer = 0;
         }
 
-        if (currentBattery <= 0 && SceneManagerScr.Instance.isGameOver == false && !GoalManager.Instance.isCleared)
+        // nullチェック（Startだと初期化順でエラーになることがあるため、安全策として）
+        if (currentBattery <= 0 && !SceneManagerScr.Instance.isGameOver && !GoalManager.Instance.isCleared)
         {
             AudioController.Instance.FadeOutBGM(0.6f);
             SceneManagerScr.Instance.GameOver();
@@ -79,21 +87,10 @@ public class BatteryController : MonoBehaviour
     {
         int remaining = currentBattery;
 
-        if (remaining <= 100)
-        {
-            lightController.ChangeLightSize(0);
-            AudioController.Instance.BGMFillter(0);
-        }
-        else if (remaining <= 200)
-        {
-            lightController.ChangeLightSize(1);
-            AudioController.Instance.BGMFillter(1);
-        }
-        else if (remaining <= 300)
-        {
-            lightController.ChangeLightSize(2);
-            AudioController.Instance.BGMFillter(2);
-        }
+        // ライトとフィルターの更新
+        int level = remaining / config.maxBatteryPerUnit; 
+        lightController.ChangeLightSize(level);
+        AudioController.Instance.BGMFillter(level);
 
         for (int i = 0; i < sliders.Length; i++)
         {
@@ -117,5 +114,36 @@ public class BatteryController : MonoBehaviour
             }
         }
     }
-    
+
+    // ★ ダメージ演出の呼び出し（どのスライダーを光らせるか判定）
+    public void OnDamage()
+    {
+        // 現在「満タンではない」一番上のバッテリーを探す
+        int targetIndex = 0;
+        for (int i = 0; i < config.batteryCount; i++)
+        {
+            if (sliders[i].value > 0)
+            {
+                targetIndex = i;
+                // ※このループで「一番右（または上）の減っている最中のやつ」を特定
+            }
+        }
+        
+        StartCoroutine(FlashDamageColor(targetIndex));
+    }
+
+    private IEnumerator FlashDamageColor(int index)
+    {
+        Image targetFill = fillImages[index];
+        targetFill.color = damageColor;
+
+        float t = 0;
+        while (t < 1.0f)
+        {
+            t += Time.unscaledDeltaTime * recoverSpeed;
+            targetFill.color = Color.Lerp(damageColor, normalColor, t);
+            yield return null;
+        }
+        targetFill.color = normalColor;
+    }
 }

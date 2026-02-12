@@ -67,6 +67,7 @@ public class AbilityManager : MonoBehaviour
             {
                 trigger.CoreTrigger();
                 BatteryController.Instance.UseBattery(config.coreBatteryCost);
+                BatteryController.Instance.OnDamage();
             }
             spaceDuration = -1.0f;
         }

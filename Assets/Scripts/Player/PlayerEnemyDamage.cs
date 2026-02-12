@@ -11,6 +11,7 @@ public class PlayerEnemyDamage : MonoBehaviour
         {
             AudioSource.PlayClipAtPoint(soundConfig.damagePClip, transform.position);
             BatteryController.Instance.UseBattery(config.enemyContactDamage);
+            BatteryController.Instance.OnDamage();
 
             if (CameraShake.Instance != null)
             {

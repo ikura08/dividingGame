@@ -12,13 +12,15 @@ public class SelectStage : MonoBehaviour
     public Button[] buttons;
     public GameObject[] signs;
     public GameObject[] newSigns;
-    public static int nextStage =2;
-    public static int clearCount = nextStage -1;
+    public static int nextStage = 0;
+    public static int clearCount;
     public GameObject[] star;
+    public GameObject[] starFlame;
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(nextStage);
+        clearCount = nextStage -1;
+
         // stageLoaderScr = GetComponent<StageLoader>();
         foreach (GameObject obj in clearStageBack)
         {
@@ -37,6 +39,14 @@ public class SelectStage : MonoBehaviour
             obj.SetActive(false);
         }
         foreach (GameObject obj in newSigns)
+        {
+            obj.SetActive(false);
+        }
+        foreach (GameObject obj in star)
+        {
+            obj.SetActive(false);
+        }
+        foreach (GameObject obj in starFlame)
         {
             obj.SetActive(false);
         }
@@ -72,6 +82,7 @@ public class SelectStage : MonoBehaviour
             {
                 star[i].SetActive(true);
             }
+            starFlame[i].SetActive(true);
         }
     }
 

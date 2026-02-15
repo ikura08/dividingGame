@@ -15,7 +15,7 @@ public class PlayerJump : MonoBehaviour, IJumpable
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W) && isGrounded)
             Jump();
     }
 
@@ -33,7 +33,7 @@ public class PlayerJump : MonoBehaviour, IJumpable
     void OnCollisionEnter2D(Collision2D collision)
     {
         // Ground
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Core"))
         {
             jumpCount = 1;
             jumpForce = 7f;

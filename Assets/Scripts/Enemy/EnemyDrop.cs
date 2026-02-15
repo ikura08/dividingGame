@@ -23,7 +23,9 @@ public class EnemyDrop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.x - player.transform.position.x < 2f && transform.position.x - player.transform.position.x > -2f && isDrop == false)
+        float distance = Mathf.Abs(transform.position.x - player.transform.position.x);
+
+        if (distance < 2f && transform.position.y >= player.transform.position.y && isDrop == false)
         {
             Drop();
             isDrop = true;

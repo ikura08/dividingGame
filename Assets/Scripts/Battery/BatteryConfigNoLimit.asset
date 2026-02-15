@@ -20,6 +20,7 @@ MonoBehaviour:
   enemyContactDamage: 0
   enemyBulletDamage: 0
   moveBatteryCost: 0
+  dropDamage: 2
   lightAttackCost: 0
   maxBatteryPerUnit: 100
-  batteryCount: 1
+  batteryCount: 3

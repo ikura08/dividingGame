@@ -988,53 +988,53 @@ CompositeCollider2D:
   - m_Collider: {fileID: 183617206425547892}
     m_ColliderPaths:
     - - X: 5000000
-        Y: 2507000
+        Y: 2506988
       - X: -5000000
-        Y: 2507000
+        Y: 2506988
       - X: -5000000
-        Y: -8507000
+        Y: -8507012
       - X: 5000000
-        Y: -8507000
+        Y: -8507012
   - m_Collider: {fileID: 1008757150820587208}
     m_ColliderPaths:
     - - X: 4500000
-        Y: 1405600
+        Y: 1405588
       - X: -4500000
-        Y: 1405600
+        Y: 1405588
       - X: -4500000
-        Y: -7405599
+        Y: -7405611
       - X: 4500000
-        Y: -7405599
+        Y: -7405611
   - m_Collider: {fileID: 448593383942963211}
     m_ColliderPaths:
     - - X: 3250000
-        Y: 6159100
+        Y: 6159096
       - X: -3250000
-        Y: 6159100
+        Y: 6159096
       - X: -3250000
-        Y: -8159098
+        Y: -8159103
       - X: 3250000
-        Y: -8159098
+        Y: -8159103
   - m_Collider: {fileID: 722155232393395370}
     m_ColliderPaths:
     - - X: 2750000
-        Y: 5057701
+        Y: 5057696
       - X: -2750000
-        Y: 5057701
+        Y: 5057696
       - X: -2750000
-        Y: -7057699
+        Y: -7057704
       - X: 2750000
-        Y: -7057699
+        Y: -7057704
   - m_Collider: {fileID: 8531807777087872505}
     m_ColliderPaths:
     - - X: -499984
-        Y: -48600
+        Y: -48597
       - X: -1499984
-        Y: -48600
+        Y: -48597
       - X: -1499984
-        Y: -2251400
+        Y: -2251397
       - X: -499984
-        Y: -2251400
+        Y: -2251397
   - m_Collider: {fileID: 2850350622028729455}
     m_ColliderPaths:
     - - X: 1499984
@@ -1047,14 +1047,14 @@ CompositeCollider2D:
         Y: -2251397
   m_CompositePaths:
     m_Paths:
-    - - {x: 0.4999707, y: -0.8507}
-      - {x: 0.4999707, y: 0.2507}
-      - {x: 0.32500002, y: 0.2507294}
-      - {x: 0.3249707, y: 0.61591}
-      - {x: -0.32500002, y: 0.6158807}
-      - {x: -0.3250294, y: 0.2507}
-      - {x: -0.5, y: 0.2506707}
-      - {x: -0.4999707, y: -0.8507}
+    - - {x: 0.4999707, y: -0.8507012}
+      - {x: 0.4999707, y: 0.2506988}
+      - {x: 0.32500002, y: 0.2507282}
+      - {x: 0.3249707, y: 0.61590964}
+      - {x: -0.32500002, y: 0.6158803}
+      - {x: -0.3250294, y: 0.2506988}
+      - {x: -0.5, y: 0.2506695}
+      - {x: -0.4999707, y: -0.8507012}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
@@ -1142,8 +1142,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3948277847547417284, guid: 581c7621925cd4cb984f5284da446d76, type: 3}
+      propertyPath: m_Volume
+      value: 0.653
+      objectReference: {fileID: 0}
+    - target: {fileID: 3948277847547417284, guid: 581c7621925cd4cb984f5284da446d76, type: 3}
       propertyPath: MaxDistance
-      value: 8.4
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3948277847547417284, guid: 581c7621925cd4cb984f5284da446d76, type: 3}
       propertyPath: m_audioClip

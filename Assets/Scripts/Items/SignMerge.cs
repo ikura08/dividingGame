@@ -22,13 +22,13 @@ public class SignMerge : MonoBehaviour
     {
         float distance = Mathf.Abs(transform.position.x - player.transform.position.x);
 
-        if (distance < 3.5f && !isMerge)
+        if (distance < 3.2f && !isMerge)
         {
             textBackground.SetActive(true);
         signBackground.SetActive(false);
             isMerge = true;
         }
-        if (distance >= 3.5f && isMerge)
+        if (distance >= 3.2f && isMerge)
         {
             textBackground.SetActive(false);
         signBackground.SetActive(true);

@@ -17,16 +17,16 @@ public class PlayerCoreInteraction : MonoBehaviour
         {
             abilityManagerScr.CoreChanging(collision);
 
-            // 上から乗った場合のみジャンプ回復
-            foreach (ContactPoint2D contact in collision.contacts)
-            {
-                if (contact.normal.y > 0.5f)
-                {
-                    jump.jumpCount = 1;
-                    jump.isGrounded = true;
-                    return;
-                }
-            }
+            // // 上から乗った場合のみジャンプ回復
+            // foreach (ContactPoint2D contact in collision.contacts)
+            // {
+            //     if (contact.normal.y > 0.5f)
+            //     {
+            //         jump.jumpCount = 1;
+            //         jump.isGrounded = true;
+            //         return;
+            //     }
+            // }
         }
     }
 }

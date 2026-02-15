@@ -24,15 +24,7 @@ public class GoalManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        Instance = this;
     }
 
     // Start is called before the first frame update
@@ -58,12 +50,14 @@ public class GoalManager : MonoBehaviour
         if (other.gameObject.CompareTag("Player") && !isCleared && !SceneManagerScr.Instance.isGameOver)
         {
             Time.timeScale = 0f;
-            SelectStage.clearCount += 1;
-            SelectStage.nextStage += 1;
             GameObject effect = Instantiate(clearEffectPrefab, transform.position, Quaternion.identity);
             isCleared = true;
             GetComponent<Renderer>().enabled = false;
             StartCoroutine(FadeInText());
+            if (SelectStage.nextStage <= stageNumber)
+            {
+                SelectStage.nextStage += 1;
+            }
         }
     }
     

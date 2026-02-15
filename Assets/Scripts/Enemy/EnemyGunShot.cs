@@ -44,13 +44,13 @@ public class EnemyGunShot : MonoBehaviour
     {
         GameObject b = Instantiate(bulletL, transform.position, Quaternion.identity);
         Rigidbody2D rb = b.GetComponent<Rigidbody2D>();
-        rb.AddForce(Vector2.left * 6.7f, ForceMode2D.Impulse);
+        rb.AddForce(Vector2.left * 7.2f, ForceMode2D.Impulse);
     }
     void ShootRight()
     {
         GameObject b = Instantiate(bulletR, transform.position, Quaternion.identity);
         Rigidbody2D rb = b.GetComponent<Rigidbody2D>();
-        rb.AddForce(Vector2.right * 6.7f, ForceMode2D.Impulse);
+        rb.AddForce(Vector2.right * 7.2f, ForceMode2D.Impulse);
     }
     void ShootDown()
     {

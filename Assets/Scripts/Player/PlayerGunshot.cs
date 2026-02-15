@@ -31,7 +31,7 @@ public class PlayerGunshot : MonoBehaviour
         GameObject b = Instantiate(bullet, transform.position, Quaternion.identity);
 
         Rigidbody2D rb = b.GetComponent<Rigidbody2D>();
-        rb.AddForce(movement.lastDirection * 7f, ForceMode2D.Impulse);
+        rb.AddForce(movement.lastDirection * 6f, ForceMode2D.Impulse);
 
         BatteryController.Instance.UseBattery(config.bulletCost);
         AudioSource.PlayClipAtPoint(soundConfig.bulletPClip, transform.position);

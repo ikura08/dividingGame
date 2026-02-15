@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BatteryConfig
   m_EditorClassIdentifier: 
   batteryPickupRecover: 35
-  enemybatteryRecover: 35
+  enemybatteryRecover: 25
   seondCost: 3
   bulletCost: 5
   coreBatteryCost: 20

@@ -44669,6 +44669,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpaceSign
       objectReference: {fileID: 0}
+    - target: {fileID: 6448998972937307653, guid: 970f09eab15e24544ad3d9d279768b09, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8252789029868301394, guid: 970f09eab15e24544ad3d9d279768b09, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.528926
@@ -46154,6 +46158,10 @@ PrefabInstance:
     - target: {fileID: 60124619500691425, guid: f5a7aca55691e4d4299fb2edcb2a93b0, type: 3}
       propertyPath: m_Name
       value: EnterSign
+      objectReference: {fileID: 0}
+    - target: {fileID: 60124619500691425, guid: f5a7aca55691e4d4299fb2edcb2a93b0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1095900395168331434, guid: f5a7aca55691e4d4299fb2edcb2a93b0, type: 3}
       propertyPath: m_LocalPosition.x

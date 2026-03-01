@@ -22,7 +22,10 @@ public class CoinGet : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            CoinData.isStageCoinGet[stageNumber - 1] = true;
+            if (stageNumber >= 1)
+            {
+                CoinData.isStageCoinGet[stageNumber - 1] = true;
+            }
             AudioSource.PlayClipAtPoint(soundConfig.coinClip, transform.position);
             Destroy(gameObject);
         }

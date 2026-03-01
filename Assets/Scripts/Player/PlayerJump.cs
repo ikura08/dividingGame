@@ -26,7 +26,7 @@ public class PlayerJump : MonoBehaviour, IJumpable
             Prb.velocity = new Vector2(Prb.velocity.x, 0);
             Prb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
             jumpCount--;
-            AudioSource.PlayClipAtPoint(soundConfig.jumpPClip, transform.position, 0.7f);
+            AudioSource.PlayClipAtPoint(soundConfig.jumpPClip, transform.position, 0.5f);
         }
     }
 

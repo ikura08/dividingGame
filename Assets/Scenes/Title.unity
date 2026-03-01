@@ -215343,6 +215343,7 @@ MonoBehaviour:
   mainMixer: {fileID: 24100000, guid: cadf8a6e7cd0f4d7a9896adb0d1b24b5, type: 2}
   sound: {fileID: 0}
   bgmSource: {fileID: 6320168208653999770}
+  clearbgmSource: {fileID: 0}
   cutoffParam: BGM_Cutoff
   changeDuration: 0.5
 --- !u!4 &4257712207500345791

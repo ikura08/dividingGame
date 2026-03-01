@@ -22,8 +22,9 @@ MonoBehaviour:
   sceneClip: {fileID: 8300000, guid: 48a44d7070aca4b4f8d394de20c302b9, type: 3}
   bulletPClip: {fileID: 8300000, guid: 422bfc1bddb45403e8d228e53ae185a8, type: 3}
   bulletEClip: {fileID: 8300000, guid: 77ac55a16303b487fb0ab1698cb43208, type: 3}
-  diePClip: {fileID: 8300000, guid: ddbdd0e9b911c4d86a28f2561b301c1b, type: 3}
+  diePClip: {fileID: 8300000, guid: 54b1e58526605433bab33d6233f6cee5, type: 3}
   dieEClip: {fileID: 8300000, guid: 59ee436071f374953b7cdb518b8dc857, type: 3}
   damagePClip: {fileID: 8300000, guid: 78de510e682f6467d94c02e89ef549b5, type: 3}
   coinClip: {fileID: 8300000, guid: 74490271c22f44936a3709369f298e5e, type: 3}
-  clearClip: {fileID: 0}
+  clearClipCoinGet: {fileID: 8300000, guid: 90e57f03ffbba491a8d5bda0997f426e, type: 3}
+  clearClipNormal: {fileID: 8300000, guid: 801ebf76432c84db080476913cc37c0f, type: 3}

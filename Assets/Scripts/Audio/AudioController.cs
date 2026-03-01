@@ -11,6 +11,8 @@ public class AudioController : MonoBehaviour
     AudioSource audioSource;
     [Header("BGM Settings")]
     public AudioSource bgmSource;
+    public AudioSource clearbgmSource;
+
     public string cutoffParam = "BGM_Cutoff";
     private Coroutine reBGMCoroutine;
     public float changeDuration = 0.5f;
@@ -100,5 +102,33 @@ public class AudioController : MonoBehaviour
 
         bgmSource.volume = 0;
         bgmSource.Stop(); // 完全に消えたら停止
+    }
+    public void PlayClearBGM()
+    {
+        StartCoroutine(CrossFade());
+    }
+
+    IEnumerator CrossFade()
+    {
+        Debug.Log("音変わった");
+        clearbgmSource.volume = 0;
+        clearbgmSource.Play();
+
+        float time = 0;
+        float startVol = bgmSource.volume;
+
+        // 2. 同時に音量を操作（クロスフェード）
+        while (time < changeDuration)
+        {
+            time += Time.unscaledDeltaTime;
+            float ratio = time / changeDuration;
+            
+            bgmSource.volume = Mathf.Lerp(startVol, 0, ratio); // 元の曲を下げ
+            clearbgmSource.volume = Mathf.Lerp(0, startVol, ratio); // 新しい曲を上げ
+            yield return null;
+        }
+
+        bgmSource.Stop();
+        Debug.Log("変わり終わった");
     }
 }

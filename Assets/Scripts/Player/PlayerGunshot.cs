@@ -34,6 +34,6 @@ public class PlayerGunshot : MonoBehaviour
         rb.AddForce(movement.lastDirection * 6f, ForceMode2D.Impulse);
 
         BatteryController.Instance.UseBattery(config.bulletCost);
-        AudioSource.PlayClipAtPoint(soundConfig.bulletPClip, transform.position);
+        AudioSource.PlayClipAtPoint(soundConfig.bulletPClip, transform.position, 0.55f);
     }
 }

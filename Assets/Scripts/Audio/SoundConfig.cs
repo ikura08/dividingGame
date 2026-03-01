@@ -45,6 +45,9 @@ public class SoundConfig : ScriptableObject
     [Header("コイン音")]
     public AudioClip coinClip;
     
-    [Header("クリア音")]
-    public AudioClip clearClip;
+    [Header("コインゲットのクリア音")]
+    public AudioClip clearClipCoinGet;
+    
+    [Header("ノーマルクリア音")]
+    public AudioClip clearClipNormal;
 }

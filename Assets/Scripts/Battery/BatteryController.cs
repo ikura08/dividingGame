@@ -62,10 +62,9 @@ public class BatteryController : MonoBehaviour
             timer = 0;
         }
 
-        // nullチェック（Startだと初期化順でエラーになることがあるため、安全策として）
         if (currentBattery <= 0 && !SceneManagerScr.Instance.isGameOver && !GoalManager.Instance.isCleared)
         {
-            AudioController.Instance.FadeOutBGM(0.43f);
+            AudioController.Instance.FadeOutBGM(1f);
             SceneManagerScr.Instance.GameOver();
             currentBattery = 1;
         }

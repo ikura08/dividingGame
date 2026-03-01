@@ -20,6 +20,8 @@ public class GoalManager : MonoBehaviour
     public Image star;
     public Image flame;
     public int stageNumber;
+    public SoundConfig soundConfig;
+
 
 
     private void Awake()
@@ -49,11 +51,20 @@ public class GoalManager : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player") && !isCleared && !SceneManagerScr.Instance.isGameOver)
         {
+            if (CoinData.isStageCoinGet[stageNumber - 1])
+            {
+                AudioSource.PlayClipAtPoint(soundConfig.clearClipCoinGet, transform.position);
+            }
+            else if (!CoinData.isStageCoinGet[stageNumber - 1])
+            {
+                AudioSource.PlayClipAtPoint(soundConfig.clearClipNormal, transform.position);
+            }
             Time.timeScale = 0f;
             GameObject effect = Instantiate(clearEffectPrefab, transform.position, Quaternion.identity);
             isCleared = true;
             GetComponent<Renderer>().enabled = false;
             StartCoroutine(FadeInText());
+            AudioController.Instance.PlayClearBGM();
             if (SelectStage.nextStage <= stageNumber)
             {
                 SelectStage.nextStage += 1;
@@ -88,11 +99,13 @@ public class GoalManager : MonoBehaviour
 
             if (hasCoin)
             {
+                Debug.Log("スターも表示");
                 flame.enabled = true;
                 star.enabled = true;
             }
             else
             {
+                Debug.Log("フレームのみ表示");
                 flame.enabled = true;
             }
         }
